@@ -7,7 +7,7 @@ setup(
     license='MIT',
     author='{{cookiecutter.full_name}}',
     author_email='{{cookiecutter.email}}',
-    description='{{cookiecutter.short_description}}',
+    description='{{cookiecutter.project_short_description}}',
     packages=['xontrib'],
     package_dir={'xontrib': 'xontrib'},
     package_data={'xontrib': ['*.xsh']},
