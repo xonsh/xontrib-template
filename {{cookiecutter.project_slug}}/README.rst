@@ -1,6 +1,6 @@
 {{cookiecutter.project_name}}
 
-{{cookiecuter.short_description}}
+{{cookiecutter.project_short_description}}
 
 
 Credits
