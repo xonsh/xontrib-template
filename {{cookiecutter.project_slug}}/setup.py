@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name='{{cookiecutter.project_slug}}',
+    name='xontrib-{{cookiecutter.project_slug}}',
     version='{{cookiecutter.version}}',
     url='https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_slug}}',
     license='MIT',
