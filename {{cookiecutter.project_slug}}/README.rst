@@ -1,7 +1,36 @@
-{{cookiecutter.project_name}}
+{{ cookiecutter.project_name }}
+===============================
+
+version number: {{cookiecutter.version}}
+author: {{cookiecutter.full_name}}
+
+Overview
+--------
 
 {{cookiecutter.project_short_description}}
 
+Installation / Usage
+--------------------
+
+To install use pip:
+
+    $ pip install xontrib-{{cookiecutter.project_slug}}
+
+
+Or clone the repo:
+
+    $ git clone https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_slug}}.git
+    $ python setup.py install
+
+Contributing
+------------
+
+TBD
+
+Example
+-------
+
+TBD
 
 Credits
 ---------
