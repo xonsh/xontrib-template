@@ -14,13 +14,13 @@ Installation / Usage
 
 To install use pip:
 
-    $ pip install xontrib-{{cookiecutter.project_slug}}
+    $ xip install xontrib-{{cookiecutter.project_slug}}
 
 
 Or clone the repo:
 
     $ git clone https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_slug}}.git
-    $ python setup.py install
+    $ xip install ./{{cookiecutter.project_slug}}
 
 Contributing
 ------------
