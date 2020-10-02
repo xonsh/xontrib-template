@@ -18,3 +18,5 @@ After you create the xontrib repository you can do some helpful tasks to spread 
 6. Now when you create new Release the Github Actions will publish the xontrib to PyPi automatically. Release status will be in Actions sction.
 
 **Add preview image**. Add the image to repository "Settings" - "Options" - "Social preview". It allows to show preview image in Github Topics and social networks.
+
+**Add xontrib to the xonsh**. To show xontrib name in `xontrib list` in xonsh add it to the [xonsh/xontribs.json](https://github.com/xonsh/xonsh/blob/master/xonsh/xontribs.json).
