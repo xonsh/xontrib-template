@@ -11,10 +11,9 @@ To install use pip:
     $ xpip install xontrib-{{cookiecutter.project_slug}}
 
 
-Or clone the repo:
+Or from the repo:
 
-    $ git clone https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_slug}}.git
-    $ xpip install -e ./{{cookiecutter.project_slug}}
+    $ xpip install -U git+https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_slug}}
 
 Usage
 -----
