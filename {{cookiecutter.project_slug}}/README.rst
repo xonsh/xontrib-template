@@ -13,7 +13,7 @@ To install use pip:
 
 Or from the repo:
 
-    $ xpip install -U git+https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_slug}}
+    $ xpip install -U git+https://github.com/{{cookiecutter.github_username}}/xontrib-{{cookiecutter.project_slug}}
 
 Usage
 -----
