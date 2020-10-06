@@ -8,17 +8,25 @@ Installation
 
 To install use pip:
 
-    $ xpip install xontrib-{{cookiecutter.project_slug}}
+.. code-block:: bash
+
+    xpip install xontrib-{{cookiecutter.project_slug}}
 
 
 Or from the repo:
 
-    $ xpip install -U git+https://github.com/{{cookiecutter.github_username}}/xontrib-{{cookiecutter.project_slug}}
+.. code-block:: bash
+
+    xpip install -U git+https://github.com/{{cookiecutter.github_username}}/xontrib-{{cookiecutter.project_slug}}
 
 Usage
 -----
 
-TODO
+.. code-block:: bash
+
+    xontrib load {{cookiecutter.project_slug}}
+    # TODO: what's next?
+
 
 Contributing
 ------------
@@ -28,7 +36,4 @@ TODO
 Credits
 ---------
 
-This package was created with cookiecutter_ and the xontrib_ template.
-
-.. _cookiecutter: https://github.com/audreyr/cookiecutter
-.. _xontrib: https://github.com/xonsh/xontrib-cookiecutter
+This package was created with `cookiecutter template <https://github.com/xonsh/xontrib-cookiecutter>`_.
