@@ -11,13 +11,7 @@ To install use pip:
 .. code-block:: bash
 
     xpip install xontrib-{{cookiecutter.project_slug}}
-
-
-Or from the repo:
-
-.. code-block:: bash
-
-    xpip install -U git+https://github.com/{{cookiecutter.github_username}}/xontrib-{{cookiecutter.project_slug}}
+    # or from the repo: xpip install -U git+https://github.com/{{cookiecutter.github_username}}/xontrib-{{cookiecutter.project_slug}}
 
 Usage
 -----
