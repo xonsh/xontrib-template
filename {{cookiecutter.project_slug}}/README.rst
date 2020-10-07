@@ -22,13 +22,12 @@ Usage
     # TODO: what's next?
 
 
-Contributing
-------------
-
-TODO
+Example
+-------
+...
 
 Credits
----------
+-------
 
 This package was created with `cookiecutter template <https://github.com/xonsh/xontrib-cookiecutter>`_.
 
