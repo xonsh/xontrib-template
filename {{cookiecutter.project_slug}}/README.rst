@@ -34,8 +34,8 @@ This package was created with `cookiecutter template <https://github.com/xonsh/x
 
 
 
-:orange:`xontrib promotion (READ and REMOVE THIS SECTION)`
-======================================================
+---- xontrib promotion (READ and REMOVE THIS SECTION) ----
+==========================================================
 
 After you create the xontrib repository you can do some helpful tasks to spread the words about xontrib.
 
