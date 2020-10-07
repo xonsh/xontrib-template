@@ -16,8 +16,7 @@ cookiecutter gh:xonsh/xontrib-cookiecutter
 
 ## Example
 ```bash
-$ cookiecutter gh:anki-code/xontrib-cookiecutter
-You've downloaded /home/pc/.cookiecutters/xontrib-cookiecutter before. Is it okay to delete and re-download it? [yes]: 
+$ cookiecutter gh:xonsh/xontrib-cookiecutter 
 full_name [Your name]: Snail
 email [Your address email]: snail
 github_username [Your github username]: snail
