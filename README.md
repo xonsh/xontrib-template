@@ -6,6 +6,18 @@ A <a href="https://github.com/audreyr/cookiecutter">cookiecutter</a> template fo
 If you like the template click ⭐ on the repo.
 </p>
 
+## Why use this template?
+
+This template includes good pack of prebuilt files: 
+
+* xontrib promotion instructions in the README 
+* `setup.cfg` file to make and install PyPi package easily 
+* `.gitattributes` file to enables Github syntax highlighting for `*.xsh` files
+* `.gitignore` file with standart list of directories to ignore
+* `MANIFEST.in` file to make packaging to Conda easily
+* `LICENSE` file with standard MIT license
+* `requirements.txt` file to make reference to xonsh on Github and promote xontrib
+
 ## Create new xontrib
 
 To create xontrib from the template just run:
