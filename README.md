@@ -12,9 +12,9 @@ This template includes good pack of prebuilt files:
 
 * xontrib promotion instructions in the README 
 * `setup.cfg` file to make and install PyPi package easily 
-* `.gitattributes` file to enables Github syntax highlighting for `*.xsh` files
-* `.gitignore` file with standart list of directories to ignore
-* `MANIFEST.in` file to make packaging to Conda easily
+* `.gitattributes` file to enable Github syntax highlighting for `*.xsh` files
+* `.gitignore` file with standard list of directories to ignore
+* `MANIFEST.in` file to make Conda feedstock easily
 * `LICENSE` file with standard MIT license
 * `requirements.txt` file to make reference to xonsh on Github and promote xontrib
 
