@@ -11,7 +11,7 @@ If you like the template click ⭐ on the repo.
 This template includes good pack of prebuilt files: 
 
 * xontrib promotion instructions in the README 
-* `setup.cfg` file to make and install PyPi package easily 
+* `setup.py` file to make and install PyPi package easily 
 * `.gitattributes` file to enable Github syntax highlighting for `*.xsh` files
 * `.gitignore` file with standard list of directories to ignore
 * `MANIFEST.in` file to make Conda feedstock easily
