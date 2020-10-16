@@ -42,7 +42,7 @@ This package was created with [xontrib cookiecutter template](https://github.com
 
 After you create the xontrib repository you can do some helpful tasks to spread the words about xontrib.
 
-**Repository name**. It's a good practice to add `xontrib-` prefix before the name of your repository. It allows use the Github search to find it.
+**Repository name**. It's a good practice to add `xontrib-` prefix before the name of your repository. It helps Github search find it.
 
 **Add topics to the repository**. To show the xontrib repository in Github Topics please add topics `xonsh` and `xontrib` to the repository "About" setting. Also add thematic topics, for example,  `ssh` if your xontrib helps work with `ssh`.
 
