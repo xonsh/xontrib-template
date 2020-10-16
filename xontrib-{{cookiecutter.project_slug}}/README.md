@@ -44,7 +44,7 @@ After you create the xontrib repository you can do some helpful tasks to spread 
 
 **Repository name**. It's a good practice to add `xontrib-` prefix before the name of your repository. It allows use the Github search to find it.
 
-**Add topics to the repository**. To show the xontrib repository in Github Topics please add topics `xonsh` and `xontrib` to the repository "About" setting. Also add thematic topics for example `ssh` if your xontrib improves of working with it.
+**Add topics to the repository**. To show the xontrib repository in Github Topics please add topics `xonsh` and `xontrib` to the repository "About" setting. Also add thematic topics, for example,  `ssh` if your xontrib helps work with `ssh`.
 
 **Easiest way to publish your xontrib to PyPi via Github Actions**. Users can install your xontrib via `pip install xontrib-myxontrib`. Easiest way to achieve it is to use Github Actions:
 
@@ -58,4 +58,3 @@ After you create the xontrib repository you can do some helpful tasks to spread 
 **Add preview image**. Add the image to repository "Settings" - "Options" - "Social preview". It allows to show preview image in Github Topics and social networks.
 
 **Add xontrib to the xonsh**. To show xontrib name in `xontrib list` in xonsh add it to the [xonsh/xontribs.json](https://github.com/xonsh/xonsh/blob/master/xonsh/xontribs.json).
-
