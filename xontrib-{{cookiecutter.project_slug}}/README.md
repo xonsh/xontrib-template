@@ -40,7 +40,7 @@ This package was created with [xontrib cookiecutter template](https://github.com
 
 ## xontrib promotion (READ and REMOVE THIS SECTION)
 
-After you create the xontrib repository you can do some helpful tasks to spread the words about xontrib.
+After you create the xontrib repository you can do some helpful tasks to spread the word about your xontrib.
 
 **Repository name**. It's a good practice to add `xontrib-` prefix before the name of your repository. It helps Github search find it.
 
