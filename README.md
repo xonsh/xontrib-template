@@ -30,7 +30,7 @@ cookiecutter gh:xonsh/xontrib-cookiecutter
 ```bash
 $ cookiecutter gh:xonsh/xontrib-cookiecutter 
 full_name [Your name]: Snail
-email [Your address email]: snail
+email [Your address email]: snail@snail.snail
 github_username [Your github username]: snail
 project_name [Name of the project (for humans, without xontrib- prefix)]: my-super-xontrib
 project_slug [my-super-xontrib]: 
