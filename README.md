@@ -20,7 +20,7 @@ This template includes good pack of prebuilt files:
 
 ## Create new xontrib
 
-To create xontrib from the template just run:
+To create a `xontrib` from this template just run:
 ```bash
 pip install cookiecutter
 cookiecutter gh:xonsh/xontrib-cookiecutter
