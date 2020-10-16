@@ -5,4 +5,4 @@ __all__ = ()
 
 print('This is {{cookiecutter.project_slug}}!')
 
-# Good strart! Get more documentation -> https://xon.sh/contents.html#guides
+# Good start! Get more documentation -> https://xon.sh/contents.html#guides
