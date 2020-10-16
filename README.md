@@ -48,7 +48,7 @@ xontrib-my-super-xontrib
 └── xontrib
     └── my-super-xontrib.xsh
 
-$ pip install -U xontrib-my-super-xontrib
+$ pip install -U xontrib-my-super-xontrib/
 Successfully installed xontrib-my-super-xontrib-0.1.0
   
 $ xontrib load my-super-xontrib
