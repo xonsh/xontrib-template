@@ -16,7 +16,7 @@ setuptools.setup(
     description="{{cookiecutter.project_short_description}}",
     long_description=long_description,
     long_description_content_type='text/markdown',
-    python_requires='>=3.5',
+    python_requires='>=3.6',
     install_requires=['xonsh'],
     packages=['xontrib'],
     package_dir={'xontrib': 'xontrib'},
