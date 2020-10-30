@@ -56,4 +56,4 @@ This is my-super-xontrib!
 ```
 
 # Alternatives
-- Poetry version of the template - https://github.com/jnoortheen/xontrib-cookiecutter
+- Poetry version of the template - https://github.com/jnoortheen/xontrib-cookiecutter-poetry
