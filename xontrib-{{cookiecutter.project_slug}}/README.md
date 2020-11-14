@@ -51,7 +51,7 @@ After you create the xontrib repository you can do some helpful tasks to spread 
 1. Register to https://pypi.org/ and [create API token](https://pypi.org/help/#apitoken).
 2. Go to repository "Settings" - "Secrets" and add keys `PYPI_USERNAME` and `PYPI_PASSWORD`.
 3. Click "Actions" link on your Github repository.
-4. Click "Set up this workflow" on "Publish Python Action".
+4. Click "Set up this workflow" on "Publish Python Package" Action.
 5. Commit the config without any changes.
 6. Now when you create new Release the Github Actions will publish the xontrib to PyPi automatically. Release status will be in Actions sction.
 
