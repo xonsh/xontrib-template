@@ -1,0 +1,17 @@
+name: Test
+
+on: push
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+    - name: Install xonsh
+      run: pip install xonsh
+    - name: Install xontrib
+      run: pip install .
+    - name: Test
+      run: xonsh -c 'xontrib load {{cookiecutter.project_slug}}'
