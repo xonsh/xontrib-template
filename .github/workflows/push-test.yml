@@ -1,15 +1,15 @@
-name: Test
+name: Testing
 
-on: push
+on: [push, pull_request]
 
 jobs:
-  deploy:
+  testing:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python
       uses: actions/setup-python@v2
-    - name: Install xonsh
+    - name: Install xonsh shell
       run: pip install xonsh
     - name: Install xontrib
       run: pip install .
