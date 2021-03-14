@@ -56,7 +56,7 @@ tree -a xontrib-my-prompt/
 #     └── my_prompt.xsh
 
 pip install -U xontrib-my-prompt/
-# Successfully installed xontrib-my-super-xontrib-0.1.0
+# Successfully installed xontrib-my-prompt-0.1.0
   
 xontrib load my_prompt
 # This is xontrib-my-prompt!
