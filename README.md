@@ -30,14 +30,14 @@ cookiecutter gh:xonsh/xontrib-cookiecutter
 ## Example
 ```bash
 cookiecutter gh:xonsh/xontrib-cookiecutter 
-# full_name [Snail From Conch]: 
-# email [your@email.address]: 
-# github_username [snail]: 
-# project_name [my-prompt]: 
-# project_repo_name [xontrib-my-prompt]: 
-# project_package_name [my_prompt]: 
-# project_short_description [A short description of the project.]: 
-# version [0.1.0]: 
+# full_name [Snail From Conch]: <ENTER>
+# email [your@email.address]: <ENTER>
+# github_username [snail]: <ENTER>
+# project_name [my-prompt]: <ENTER>
+# project_repo_name [xontrib-my-prompt]: <ENTER> 
+# project_package_name [my_prompt]: <ENTER>
+# project_short_description [A short description of the project.]: <ENTER> 
+# version [0.1.0]: <ENTER>
 
 
 tree -a xontrib-my-prompt/
