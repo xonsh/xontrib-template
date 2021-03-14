@@ -29,31 +29,31 @@ cookiecutter gh:xonsh/xontrib-cookiecutter
 
 ## Example
 ```bash
-$ cookiecutter gh:xonsh/xontrib-cookiecutter 
-full_name [Your name]: Snail
-email [Your address email]: snail@snail.snail
-github_username [Your github username]: snail
-project_name [Name of the project (for humans, without xontrib- prefix)]: my-super-xontrib
-project_slug [my-super-xontrib]: 
-project_short_description [A short description of the project]: It's my super xontrib!
-version [0.1.0]: 
+cookiecutter gh:xonsh/xontrib-cookiecutter 
+# full_name [Your name]: Conch Snail
+# email [your@email.address]: snail@conch.sea
+# github_username [Your github username]: snail
+# project_name [Short project name (i.e. my-prompt)]: my-prompt
+# project_repo_name [xontrib-my-prompt]: 
+# project_package_name [my_prompt]: 
+# project_short_description [A short description of the project]: My super prompt.
+# version [0.1.0]: 
 
-$ tree xontrib-my-super-xontrib
-xontrib-my-super-xontrib
-├── LICENSE
-├── MANIFEST.in
-├── README.rst
-├── requirements.txt
-├── setup.cfg
-├── setup.py
-└── xontrib
-    └── my-super-xontrib.xsh
+tree xontrib-my-prompt
+# xontrib-my-prompt/
+# ├── LICENSE
+# ├── MANIFEST.in
+# ├── README.md
+# ├── requirements.txt
+# ├── setup.py
+# └── xontrib
+#     └── my_prompt.xsh
 
-$ pip install -U xontrib-my-super-xontrib/
-Successfully installed xontrib-my-super-xontrib-0.1.0
+pip install -U xontrib-my-prompt/
+# Successfully installed xontrib-my-super-xontrib-0.1.0
   
-$ xontrib load my-super-xontrib
-This is my-super-xontrib!
+xontrib load my_prompt
+# This is xontrib-my-prompt!
 ```
 
 # Alternatives
