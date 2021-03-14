@@ -14,4 +14,4 @@ jobs:
     - name: Install xontrib
       run: pip install .
     - name: Test
-      run: xonsh -c 'xontrib load {{cookiecutter.project_slug}}'
+      run: xonsh -c 'xontrib load {{cookiecutter.project_package_name}}'
