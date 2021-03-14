@@ -45,7 +45,7 @@ tree -a xontrib-my-prompt/
 # ├── .gitattributes
 # ├── .github
 # │    └── workflows
-# │    └── push-test.yml
+# │         └── push-test.yml
 # ├── .gitignore
 # ├── LICENSE
 # ├── MANIFEST.in
