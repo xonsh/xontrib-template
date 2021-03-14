@@ -20,7 +20,7 @@ This template includes good pack of prebuilt files:
 
 ## Create new xontrib
 
-To create xontrib from the template just run:
+To create a `xontrib` from this template just run:
 ```bash
 pip install cookiecutter
 cookiecutter gh:xonsh/xontrib-cookiecutter
@@ -30,7 +30,7 @@ cookiecutter gh:xonsh/xontrib-cookiecutter
 ```bash
 $ cookiecutter gh:xonsh/xontrib-cookiecutter 
 full_name [Your name]: Snail
-email [Your address email]: snail
+email [Your address email]: snail@snail.snail
 github_username [Your github username]: snail
 project_name [Name of the project (for humans, without xontrib- prefix)]: my-super-xontrib
 project_slug [my-super-xontrib]: 
@@ -48,9 +48,12 @@ xontrib-my-super-xontrib
 └── xontrib
     └── my-super-xontrib.xsh
 
-$ pip install -U xontrib-my-super-xontrib
+$ pip install -U xontrib-my-super-xontrib/
 Successfully installed xontrib-my-super-xontrib-0.1.0
   
 $ xontrib load my-super-xontrib
 This is my-super-xontrib!
 ```
+
+# Alternatives
+- Poetry version of the template - https://github.com/jnoortheen/xontrib-cookiecutter-poetry
