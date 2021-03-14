@@ -1,11 +1,11 @@
 {
-    "full_name": "Your name",
+    "full_name": "Snail From Conch",
     "email": "your@email.address",
-    "github_username": "Your github username",
-    "project_name": "Short project name (i.e. my-prompt)",
+    "github_username": "snail",
+    "project_name": "my-prompt",
     "project_repo_name": "{{'xontrib-' + cookiecutter.project_name.lower().replace(' ', '-').replace('_','-')}}",
     "project_package_name": "{{cookiecutter.project_name.lower().replace(' ', ')').replace('-','_')}}",
-    "project_short_description": "A short description of the project",
+    "project_short_description": "A short description of the project.",
     "version": "0.1.0",
     "_extensions": ["jinja2_time.TimeExtension"]
 }
