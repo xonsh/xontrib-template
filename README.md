@@ -30,17 +30,23 @@ cookiecutter gh:xonsh/xontrib-cookiecutter
 ## Example
 ```bash
 cookiecutter gh:xonsh/xontrib-cookiecutter 
-# full_name [Your name]: Conch Snail
-# email [your@email.address]: snail@conch.sea
-# github_username [Your github username]: snail
-# project_name [Short project name (i.e. my-prompt)]: my-prompt
+# full_name [Snail From Conch]: 
+# email [your@email.address]: 
+# github_username [snail]: 
+# project_name [my-prompt]: 
 # project_repo_name [xontrib-my-prompt]: 
 # project_package_name [my_prompt]: 
-# project_short_description [A short description of the project]: My super prompt.
+# project_short_description [A short description of the project.]: 
 # version [0.1.0]: 
 
-tree xontrib-my-prompt
+
+tree -a xontrib-my-prompt/
 # xontrib-my-prompt/
+# ├── .gitattributes
+# ├── .github
+# │    └── workflows
+# │    └── push-test.yml
+# ├── .gitignore
 # ├── LICENSE
 # ├── MANIFEST.in
 # ├── README.md
