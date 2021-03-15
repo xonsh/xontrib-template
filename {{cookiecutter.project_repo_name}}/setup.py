@@ -8,7 +8,7 @@ except (IOError, OSError):
     long_description = ''
 
 setuptools.setup(
-    name='xontrib-{{cookiecutter.project_slug}}',
+    name='{{cookiecutter.project_repo_name}}',
     version='{{cookiecutter.version}}',
     license='MIT',
     author='{{cookiecutter.full_name}}',
@@ -22,17 +22,18 @@ setuptools.setup(
     package_dir={'xontrib': 'xontrib'},
     package_data={'xontrib': ['*.xsh']},
     platforms='any',
-    url='https://github.com/{{cookiecutter.github_username}}/xontrib-{{cookiecutter.project_slug}}',
+    url='https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_repo_name}}',
     project_urls={
-        "Documentation": "https://github.com/{{cookiecutter.github_username}}/xontrib-{{cookiecutter.project_slug}}/blob/master/README.md",
-        "Code": "https://github.com/{{cookiecutter.github_username}}/xontrib-{{cookiecutter.project_slug}}",
-        "Issue tracker": "https://github.com/{{cookiecutter.github_username}}/xontrib-{{cookiecutter.project_slug}}/issues",
+        "Documentation": "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_repo_name}}/blob/master/README.md",
+        "Code": "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_repo_name}}",
+        "Issue tracker": "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_repo_name}}/issues",
     },
     classifiers=[
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
         "Topic :: System :: Shells",
