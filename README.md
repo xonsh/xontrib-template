@@ -15,6 +15,7 @@ This template includes good pack of prebuilt files:
 * `.gitattributes` file to enable Github syntax highlighting for `*.xsh` files
 * `.gitignore` file with standard list of directories to ignore
 * `.github/workflow/push-test.yml` to automatically test the code using Github Actions
+* `.github/*_template.md` files to create Github templates for the text of issue and PR.
 * `MANIFEST.in` file to make Conda feedstock easily
 * `LICENSE` file with standard MIT license
 * `requirements.txt` file to make reference to xonsh on Github and promote xontrib
