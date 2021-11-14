@@ -1,0 +1,22 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# this is the top-most EditorConfig file
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
+
+[*.{yml,json}]
+indent_size = 2
+
+[*.{md,markdown}]
+# don't trim trailing spaces because markdown syntax allows that
+trim_trailing_whitespace = false
+
+[{makefile,Makefile,MAKEFILE}]
+indent_style = tab
