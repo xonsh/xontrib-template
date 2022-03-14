@@ -53,8 +53,8 @@ After you create the xontrib repository you can do some helpful tasks to spread 
 3. Click "Actions" link on your Github repository.
    1. Click on "New Workflow"
    2. Click "Configure" on "Publish Python Package" Action.
-5. Commit the config without any changes.
-6. Now when you create new Release the Github Actions will publish the xontrib to PyPi automatically. Release status will be in Actions sction.
+4. Commit the config without any changes.
+5. Now when you create new Release the Github Actions will publish the xontrib to PyPi automatically. Release status will be in Actions sction.
 
 **Add preview image**. Add the image to repository "Settings" - "Options" - "Social preview". It allows to show preview image in Github Topics and social networks.
 
