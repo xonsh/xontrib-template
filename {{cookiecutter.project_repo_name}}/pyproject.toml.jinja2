@@ -1,0 +1,69 @@
+{% if cookiecutter.package_manager == 'poetry' %}
+[tool.poetry]
+name = "{{cookiecutter.project_repo_name}}"
+version = "{{cookiecutter.version}}"
+description = "{{cookiecutter.project_short_description}}"
+authors = ["{{cookiecutter.full_name}} <{{cookiecutter.email}}>"]
+
+license = "MIT"
+readme = "README.md"
+
+repository = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_repo_name}}"
+keywords = ['xontrib', 'xonsh']
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Topic :: System :: Shells",
+    "Topic :: System :: System Shells",
+    "Topic :: Terminals",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+]
+
+
+packages = [{ include = "xontrib" }]
+
+[tool.poetry.urls]
+Documentation = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_repo_name}}/blob/master/README.md"
+Code = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_repo_name}}"
+"Issue tracker" = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_repo_name}}/issues"
+
+
+[tool.poetry.dependencies]
+python = ">=3.7"
+xonsh = ">=0.9.20"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+{% endif %}
+
+[tool.isort]
+profile = "black"
+
+[tool.black]
+include = '\.pyi?$'
+force-exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.pytest_cache
+  | \.tox
+  | \.vscode
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | disk-cache.sqlite3
+)/
+'''

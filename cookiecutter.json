@@ -1,11 +1,14 @@
 {
-    "full_name": "Snail From Conch",
-    "email": "your@email.address",
+    "full_name": "Your Full-name",
     "github_username": "snail",
+    "email": "{{ cookiecutter.github_username }}@email.address",
     "project_name": "my-prompt",
-    "project_repo_name": "{{'xontrib-' + cookiecutter.project_name.lower().replace(' ', '-').replace('_','-')}}",
-    "project_package_name": "{{cookiecutter.project_name.lower().replace(' ', '_').replace('-','_')}}",
+    "project_repo_name": "xontrib-{{ cookiecutter.project_name | slugify }}",
+    "project_package_name": "{{ cookiecutter.project_name | slugify(separator='_') }}",
     "project_short_description": "A short description of the project.",
-    "version": "0.1.0",
-    "_extensions": ["jinja2_time.TimeExtension"]
+    "package_manager": ["pip", "poetry"],
+    "enable_pre_commit_hooks": ["yes", "no"],
+    "enable_auto_release": ["yes", "no"],
+    "version": "0.0.1",
+    "_extensions": ["jinja2_time.TimeExtension", "cookiecutter.extensions.SlugifyExtension"]
 }

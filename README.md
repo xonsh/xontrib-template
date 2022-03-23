@@ -62,6 +62,3 @@ pip install -U xontrib-my-prompt/
 xontrib load my_prompt
 # This is xontrib-my-prompt!
 ```
-
-# Alternatives
-- Poetry version of the template - https://github.com/jnoortheen/xontrib-cookiecutter-poetry

@@ -1,0 +1,55 @@
+repos:
+  - repo: https://github.com/pycqa/isort
+    rev: 5.10.1
+    hooks:
+      - id: isort
+        args: [
+          "--filter-files", # skip files that are excluded in config file
+          "--profile=black",
+          "--skip=migrations"
+        ]
+
+  - repo: https://github.com/ambv/black
+    rev: 22.1.0
+    hooks:
+      - id: black
+        language_version: python3.8
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: "v0.941" # Use the sha / tag you want to point at
+    hooks:
+      - id: mypy
+        args: [ "--allow-untyped-globals", "--ignore-missing-imports" ]
+        additional_dependencies: [ types-all ]
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.1.0
+    hooks:
+      - id: trailing-whitespace
+      - id: check-yaml
+      - id: check-toml
+      - id: check-merge-conflict
+      - id: debug-statements
+      - id: check-added-large-files
+
+  - repo: https://github.com/pycqa/flake8
+    rev: "4.0.1" # pick a git hash / tag to point to
+    hooks:
+      - id: flake8
+        args: [ "--ignore=E501,W503,W504,E203,E251,E266,E401,E126,E124,C901" ]
+        additional_dependencies: [
+          'flake8-bugbear',
+        ]
+
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v2.31.1
+    hooks:
+      - id: pyupgrade
+        args:
+          - "--py37-plus"
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v1.2.0
+    hooks:
+      - id: conventional-pre-commit
+        stages: [commit-msg]
+        args: [] # optional: list of Conventional Commits types to allow

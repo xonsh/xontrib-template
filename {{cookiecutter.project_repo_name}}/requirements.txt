@@ -1,1 +1,1 @@
-xonsh
+xonsh>=0.11
