@@ -7,6 +7,7 @@
     "project_package_name": "{{ cookiecutter.project_name | slugify(separator='_') }}",
     "project_short_description": "A short description of the project.",
     "package_manager": ["pip", "poetry"],
+    "enable_pre_commit_hooks": ["yes", "no"],
     "version": "0.0.1",
     "_extensions": ["jinja2_time.TimeExtension", "cookiecutter.extensions.SlugifyExtension"]
 }

@@ -1,8 +1,8 @@
 """This is run after project generation"""
-import os
 import shutil
 
 pkg_manager = "{{ cookiecutter.package_manager }}"
+disable_commit_hooks = "{{ cookiecutter.enable_pre_commit_hooks }}" is "no"
 
 from pathlib import Path
 
@@ -17,14 +17,21 @@ def get_all_files(path: "Path | str"):
             yield from get_all_files(p)
 
 
-# remove pip based setup
-if pkg_manager != "pip":
-    print("Pip is not selected")
-    for file in ["MANIFEST.in", "requirements.txt", "setup.py"]:
-        print(f"Removing {file} ")
-        os.unlink(file)
+def remove(file):
+    print(f"Removing {file} ")
+    file.unlink()
 
-# remove any .jinja2 extensions from file names
+
 for file in get_all_files(Path.cwd()):
+    if pkg_manager != "pip" and file.name in {
+        "MANIFEST.in",
+        "requirements.txt",
+        "setup.py",
+    }:
+        # remove pip based setup
+        remove(file)
+    if disable_commit_hooks and (file.name == ".pre-commit-config.yaml"):
+        remove(file)
+    # remove any .jinja2 extensions from file names
     if file.suffix.endswith("jinja2"):
         shutil.move(file, file.name.rstrip(file.suffix))
