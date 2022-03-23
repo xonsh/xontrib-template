@@ -28,6 +28,9 @@ def test_pip(bake_cookie, tmp_path):
         ".github/issue_template.md",
         "xontrib-my-prompt/.gitattributes",
         "xontrib-my-prompt/pyproject.toml",
+        ".github/release-drafter.yml",
+        "workflows/release.yml",
+        "xontrib-my-prompt/.pre-commit-config.yaml",
     }
 
 
@@ -45,4 +48,7 @@ def test_poetry(bake_cookie, tmp_path):
         ".github/issue_template.md",
         "xontrib-my-prompt/.gitattributes",
         "xontrib-my-prompt/pyproject.toml",
+        "xontrib-my-prompt/.pre-commit-config.yaml",
+        ".github/release-drafter.yml",
+        "workflows/release.yml",
     }

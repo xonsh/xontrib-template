@@ -1,4 +1,4 @@
-name: Testing
+{% raw %}name: Testing
 
 on:
   push:
@@ -34,3 +34,4 @@ jobs:
       run: pip install .
     - name: Test
       run: xonsh -c 'xontrib load {{cookiecutter.project_package_name}}'
+{% endraw %}

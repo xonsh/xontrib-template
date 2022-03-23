@@ -31,6 +31,12 @@ xontrib load {{cookiecutter.project_package_name}}
 
 ...
 
+## Releasing your package
+
+- Bump the version of your package.
+- Create a GitHub release (The release notes are automatically generated as a draft release after each push).
+- And publish with `poetry publish --build` or `twine`
+
 ## Credits
 
 This package was created with [xontrib cookiecutter template](https://github.com/xonsh/xontrib-cookiecutter).
