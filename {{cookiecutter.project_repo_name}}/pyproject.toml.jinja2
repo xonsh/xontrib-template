@@ -1,0 +1,51 @@
+{% if cookiecutter.package_manager == 'poetry' %}
+[tool.poetry]
+name = "{{cookiecutter.project_repo_name}}"
+version = "{{cookiecutter.version}}"
+description = "{{cookiecutter.project_short_description}}"
+authors = ["{{cookiecutter.full_name}} <{{cookiecutter.email}}>"]
+
+license = "MIT"
+readme = "README.md"
+
+repository = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_repo_name}}"
+keywords = ['xontrib', 'xonsh']
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Topic :: System :: Shells",
+    "Topic :: System :: System Shells",
+    "Topic :: Terminals",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+]
+
+
+packages = [{ include = "xontrib" }]
+
+[tool.poetry.urls]
+Documentation = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_repo_name}}/blob/master/README.md"
+Code = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_repo_name}}"
+"Issue tracker" = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_repo_name}}/issues"
+
+
+[tool.poetry.dependencies]
+python = ">=3.6"
+xonsh = ">=0.9.20"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.0"
+colorama = "*"
+arger = "*"
+black = { version = "^20.8b1", allow-prereleases = true }
+yapf = "^0.30.0" # can be used to format .xsh files with the special rules
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+{% endif %}
