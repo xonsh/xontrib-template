@@ -11,14 +11,13 @@ If you like the template click ⭐ on the repo.
 This template includes good pack of prebuilt files: 
 
 * `README` with the info and xontrib promotion instructions
-* `setup.py` file to make and install PyPi package easily 
+* [`PEP 621`](https://peps.python.org/pep-0621/) or `poetry` based `pyproject.toml` file to make and install PyPi package easily 
 * `.gitattributes` file to enable Github syntax highlighting for `*.xsh` files
 * `.gitignore` file with standard list of directories to ignore
 * `.github/workflow/push-test.yml` to automatically test the code using Github Actions
 * `.github/*_template.md` files to create Github templates for the text of issue and PR.
 * `MANIFEST.in` file to make Conda feedstock easily
 * `LICENSE` file with standard MIT license
-* `requirements.txt` file to make reference to xonsh on Github and promote xontrib
 
 ## Create new xontrib
 
