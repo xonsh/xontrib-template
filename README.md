@@ -27,6 +27,13 @@ pip install cookiecutter
 cookiecutter gh:xonsh/xontrib-cookiecutter
 ```
 
+## Advent of [PEP-621](https://peps.python.org/pep-0621/) 
+
+Older projects can use the following tools to upgrade their setup to use pyproject.toml
+
+* https://ini2toml.readthedocs.io/en/latest/setuptools_pep621.html
+* https://validate-pyproject.readthedocs.io/
+
 ## Example
 ```bash
 cookiecutter gh:xonsh/xontrib-cookiecutter 
