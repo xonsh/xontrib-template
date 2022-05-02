@@ -31,6 +31,7 @@ cookiecutter gh:xonsh/xontrib-cookiecutter
 
 Older projects can use the following tools to upgrade their setup to use pyproject.toml
 
+* https://github.com/asottile/setup-py-upgrade
 * https://ini2toml.readthedocs.io/en/latest/setuptools_pep621.html
 * https://validate-pyproject.readthedocs.io/
 * https://github.com/denkiwakame/py-tiny-pkg
