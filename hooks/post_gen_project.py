@@ -25,8 +25,6 @@ def remove(file):
 
 for file in get_all_files(Path.cwd()):
     if pkg_manager != "pip" and file.name in {
-        "MANIFEST.in",
-        "requirements.txt",
         "setup.py",
     }:
         # remove pip based setup
