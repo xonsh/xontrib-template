@@ -18,32 +18,72 @@ classifiers = [
     "Topic :: System :: Shells",
     "Topic :: System :: System Shells",
     "Topic :: Terminals",
-    "Programming Language :: Python",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.6",
-    "Programming Language :: Python :: 3.7",
-    "Programming Language :: Python :: 3.8",
 ]
-
-
 packages = [{ include = "xontrib" }]
+{% else %}
+[project]
+name = "{{cookiecutter.project_repo_name}}"
+version = "{{cookiecutter.version}}"
+license = {file = "LICENSE"}
+description = "{{cookiecutter.project_short_description}}"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: System :: Shells",
+    "Topic :: System :: System Shells",
+    "Topic :: Terminals",
+]
+requires-python = ">=3.6"
+dependencies = ["xonsh"]
+[[project.authors]]
+name = "{{cookiecutter.full_name}}"
+email = "{{cookiecutter.email}}"
+[project.readme]
+file = "README.md"
+content-type = "text/markdown"
+{% endif %}
 
+{% if cookiecutter.package_manager == 'poetry' %}
 [tool.poetry.urls]
+{% else %}
+[project.urls]
+{% endif %}
+Homepage = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_repo_name}}"
 Documentation = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_repo_name}}/blob/master/README.md"
 Code = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_repo_name}}"
 "Issue tracker" = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_repo_name}}/issues"
 
-
+{% if cookiecutter.package_manager == 'poetry' %}
 [tool.poetry.dependencies]
 python = ">=3.7"
 xonsh = ">=0.11"
+{% endif %}
 
+{% if cookiecutter.package_manager == 'poetry' %}
 [tool.poetry.dev-dependencies]
 pytest = ">=6.0"
+{% endif %}
 
+{% if cookiecutter.package_manager == 'poetry' %}
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+{% else %}
+[build-system]
+requires = [
+    "setuptools>=61",
+    "wheel",               # for bdist package distribution
+]
+build-backend = "setuptools.build_meta"
+[tool.setuptools]
+packages = ["xontrib"]
+package-dir = {xontrib = "xontrib"}
+platforms = ["any"]
+include-package-data = false
+[tool.setuptools.package-data]
+xontrib = ["*.xsh"]
 {% endif %}
 
 [tool.isort]
