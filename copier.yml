@@ -1,0 +1,66 @@
+# see https://copier.readthedocs.io/en/stable/configuring/
+
+### Settings ###
+_min_copier_version: "6.0.0"
+_subdirectory: project-template
+_templates_suffix: "" # empty suffix will process all files
+_tasks:
+  - python hooks/post_gen_project.py
+_envops:
+  extensions:
+    - jinja2_time.TimeExtension
+    - cookiecutter.extensions.SlugifyExtension
+
+### question ###
+
+full_name:
+  type: str
+  help: Enter your full name. This will appear in the License generated and `setup.py`'s authors field.
+
+github_username:
+  type: str
+  default: snail
+  help: You Github username or organization name under which the projects lives.
+
+email:
+  type: str
+  default: "{{ github_username }}@email.address"
+  help: Your E-mail address. This will appear in the License generated and `setup.py`'s authors field.
+
+project_name:
+  type: str
+  help: Name of the project without the 'xontrib-' prefix
+
+project_repo_name:
+  type: str
+  default: xontrib-{{ project_name|slugify }}
+  help: full repository name. Mostly the default is good.
+
+project_package_name:
+  type: str
+  default: "{{ project_name|slugify(separator='_') }}"
+  help: name of the Python module created inside the 'xontrib/' namespace package
+
+project_short_description:
+  type: str
+  help: A short description of the project.
+
+package_manager:
+  type: str
+  choices:
+    - setuptools
+    - poetry
+
+enable_pre_commit_hooks:
+  type: bool
+  help: Enable pre-commit for this project?
+  default: yes
+
+pure_py:
+  type: bool
+  help: Use Only pure Python for developing the extension?
+  default: yes
+
+version:
+  help: project version
+  default: 0.0.1
