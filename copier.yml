@@ -6,10 +6,9 @@ _subdirectory: project-template
 _templates_suffix: "" # empty suffix will process all files
 _tasks:
   - python hooks/post_gen_project.py
-_envops:
-  extensions:
-    - jinja2_time.TimeExtension
-    - cookiecutter.extensions.SlugifyExtension
+_jinja_extensions:
+  - jinja2_time.TimeExtension
+  - cookiecutter.extensions.SlugifyExtension
 
 ### question ###
 

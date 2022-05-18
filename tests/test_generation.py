@@ -30,7 +30,7 @@ def validate_pyproject_toml_generated(path:Path):
 
 
 def test_pip(bake_cookie, tmp_path):
-    out_path = bake_cookie()
+    out_path = bake_cookie(package_manager="pip")
     files = set(get_all_files(out_path, tmp_path))
     assert files == {
         "xontrib-my-prompt/LICENSE",

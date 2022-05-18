@@ -1,9 +1,9 @@
 <p align="center">
-{{cookiecutter.project_short_description}}
+{{_copier_conf.project_short_description}}
 </p>
 
 <p align="center">  
-If you like the idea click ⭐ on the repo and <a href="https://twitter.com/intent/tweet?text=Nice%20xontrib%20for%20the%20xonsh%20shell!&url=https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_repo_name}}" target="_blank">tweet</a>.
+If you like the idea click ⭐ on the repo and <a href="https://twitter.com/intent/tweet?text=Nice%20xontrib%20for%20the%20xonsh%20shell!&url=https://github.com/{{_copier_conf.github_username}}/{{_copier_conf.project_repo_name}}" target="_blank">tweet</a>.
 </p>
 
 
@@ -12,14 +12,14 @@ If you like the idea click ⭐ on the repo and <a href="https://twitter.com/inte
 To install use pip:
 
 ```bash
-xpip install {{cookiecutter.project_repo_name}}
-# or: xpip install -U git+https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_repo_name}}
+xpip install {{_copier_conf.project_repo_name}}
+# or: xpip install -U git+https://github.com/{{_copier_conf.github_username}}/{{_copier_conf.project_repo_name}}
 ```
 
 ## Usage
 
 ```bash
-xontrib load {{cookiecutter.project_package_name}}
+xontrib load {{_copier_conf.project_package_name}}
 # TODO: what's next?
 ```
 

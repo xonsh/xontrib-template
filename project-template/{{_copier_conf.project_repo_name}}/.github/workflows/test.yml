@@ -41,5 +41,5 @@ jobs:
       run: {% if _copier_conf.package_manager == 'poetry' %}poetry install{% else %}pip install ".[dev]"{% endif %}
     - name: Run tests
       run: |
-        {% if _copier_conf.package_manager == 'poetry' %}poetry run {% endif %}xonsh -c "xontrib load {{ cookiecutter.project_package_name}}"
+        {% if _copier_conf.package_manager == 'poetry' %}poetry run {% endif %}xonsh -c "xontrib load {{ _copier_conf.project_package_name}}"
         {% if _copier_conf.package_manager == 'poetry' %}poetry run {% endif %}pytest
