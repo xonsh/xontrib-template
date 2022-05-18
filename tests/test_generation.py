@@ -3,19 +3,23 @@ from pathlib import Path
 import tomli
 
 
-def get_all_files(path: "Path | str", parent: Path):
+def get_all_files(path: "Path | str", root: Path = None):
     if isinstance(path, str):
         path = Path(path)
+    if root is None:
+        childs = list(path.iterdir())
+        assert len(childs) == 1
+        root = childs[0]
     for p in path.iterdir():
         if p.is_file():
             if p.name == "pyproject.toml":
                 validate_pyproject_toml_generated(p)
-            yield str(p.relative_to(parent))
+            yield str(p.relative_to(root))
         else:
-            yield from get_all_files(p, path)
+            yield from get_all_files(p, root)
 
 
-def validate_pyproject_toml_generated(path:Path):
+def validate_pyproject_toml_generated(path: Path):
     from validate_pyproject import api
 
     # let's assume that you have access to a `loads` function
@@ -29,42 +33,48 @@ def validate_pyproject_toml_generated(path:Path):
     validator(pyproject_as_dict)
 
 
-def test_pip(bake_cookie, tmp_path):
-    out_path = bake_cookie(package_manager="pip")
-    files = set(get_all_files(out_path, tmp_path))
+def test_pip(bake_cookie):
+    out = bake_cookie(package_manager="pip")
+    files = set(get_all_files(out.dst_path))
     assert files == {
-        "xontrib-my-prompt/LICENSE",
-        "xontrib/my_prompt.xsh",
-        "xontrib-my-prompt/.editorconfig",
-        "xontrib-my-prompt/README.md",
-        "xontrib-my-prompt/setup.py",
-        "xontrib-my-prompt/.gitignore",
-        "workflows/test.yml",
-        ".github/pull_request_template.md",
-        ".github/issue_template.md",
-        "xontrib-my-prompt/.gitattributes",
-        "xontrib-my-prompt/pyproject.toml",
-        ".github/release-drafter.yml",
-        "workflows/release.yml",
-        "xontrib-my-prompt/.pre-commit-config.yaml",
+        '.copier-answers.yml',
+        '.editorconfig',
+        '.gitattributes',
+        '.github/issue_template.md',
+        '.github/pull_request_template.md',
+        '.github/release-drafter.yml',
+        '.github/workflows/release.yml',
+        '.github/workflows/test.yml',
+        '.gitignore',
+        '.pre-commit-config.yaml',
+        'LICENSE',
+        'README.md',
+        'pyproject.toml',
+        'setup.py',
+        'tests/__init__.py',
+        'tests/test_xontrib.py',
+        'xontrib/my_prompt.py'
     }
 
 
-def test_poetry(bake_cookie, tmp_path):
-    out_path = bake_cookie(package_manager="poetry")
-    files = set(get_all_files(out_path, tmp_path))
+def test_poetry(bake_cookie):
+    out = bake_cookie(package_manager="poetry")
+    files = set(get_all_files(out.dst_path))
     assert files == {
-        "xontrib-my-prompt/LICENSE",
-        "xontrib/my_prompt.xsh",
-        "xontrib-my-prompt/.editorconfig",
-        "xontrib-my-prompt/README.md",
-        "xontrib-my-prompt/.gitignore",
-        "workflows/test.yml",
-        ".github/pull_request_template.md",
-        ".github/issue_template.md",
-        "xontrib-my-prompt/.gitattributes",
-        "xontrib-my-prompt/pyproject.toml",
-        "xontrib-my-prompt/.pre-commit-config.yaml",
-        ".github/release-drafter.yml",
-        "workflows/release.yml",
+        '.copier-answers.yml',
+        '.editorconfig',
+        '.gitattributes',
+        '.github/issue_template.md',
+        '.github/pull_request_template.md',
+        '.github/release-drafter.yml',
+        '.github/workflows/release.yml',
+        '.github/workflows/test.yml',
+        '.gitignore',
+        '.pre-commit-config.yaml',
+        'LICENSE',
+        'README.md',
+        'pyproject.toml',
+        'tests/__init__.py',
+        'tests/test_xontrib.py',
+        'xontrib/my_prompt.py'
     }

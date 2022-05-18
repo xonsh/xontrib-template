@@ -4,8 +4,6 @@
 _min_copier_version: "6.0.0"
 _subdirectory: project-template
 _templates_suffix: "" # empty suffix will process all files
-_tasks:
-  - python hooks/post_gen_project.py
 _jinja_extensions:
   - jinja2_time.TimeExtension
   - cookiecutter.extensions.SlugifyExtension
@@ -18,12 +16,10 @@ full_name:
 
 github_username:
   type: str
-  default: snail
   help: You Github username or organization name under which the projects lives.
 
 email:
   type: str
-  default: "{{ github_username }}@email.address"
   help: Your E-mail address. This will appear in the License generated and `setup.py`'s authors field.
 
 project_name:

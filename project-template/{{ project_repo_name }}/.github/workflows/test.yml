@@ -24,7 +24,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-{%- if _copier_conf.package_manager == 'poetry' %}
+{%- if package_manager == 'poetry' %}
     - name: Install poetry
       run: pipx install poetry
 {% endif -%}
@@ -35,11 +35,11 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
 {% endraw %}
-        cache: {% if _copier_conf.package_manager == 'poetry' %}poetry{% else %}pip{% endif %}
+        cache: {% if package_manager == 'poetry' %}poetry{% else %}pip{% endif %}
 
     - name: Install dependencies
-      run: {% if _copier_conf.package_manager == 'poetry' %}poetry install{% else %}pip install ".[dev]"{% endif %}
+      run: {% if package_manager == 'poetry' %}poetry install{% else %}pip install ".[dev]"{% endif %}
     - name: Run tests
       run: |
-        {% if _copier_conf.package_manager == 'poetry' %}poetry run {% endif %}xonsh -c "xontrib load {{ _copier_conf.project_package_name}}"
-        {% if _copier_conf.package_manager == 'poetry' %}poetry run {% endif %}pytest
+        {% if package_manager == 'poetry' %}poetry run {% endif %}xonsh -c "xontrib load {{ project_package_name}}"
+        {% if package_manager == 'poetry' %}poetry run {% endif %}pytest
