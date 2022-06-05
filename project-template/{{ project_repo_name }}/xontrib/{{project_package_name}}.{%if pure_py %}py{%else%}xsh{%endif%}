@@ -1,0 +1,27 @@
+{% if pure_py %}
+from xonsh.built_ins import XSH
+{% else %}
+# Note! If you write the xontrib on Python it will work faster
+# until https://github.com/xonsh/xonsh/issues/3953 hasn't released yet.
+import xonsh
+{% endif %}
+
+__all__ = ()
+
+print('This is {{ project_repo_name }}!')
+
+
+# Good start! Get more documentation -> https://xon.sh/contents.html#guides
+
+# accessing environment variables
+{% if pure_py %}
+# Some code in Using Python API:
+var = XSH.env.get("VAR", "default")
+{% else %}
+var = ${...}.get('VAR', 'default')
+{% endif %}
+{% if pure_py %}
+result = __xonsh__.subproc_captured_stdout(['echo', '1'])
+{% else %}
+result = $(echo 1)
+{% endif %}

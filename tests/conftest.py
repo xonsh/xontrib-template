@@ -1,16 +1,22 @@
 from pathlib import Path
 
 from pytest import fixture
-from cookiecutter.main import cookiecutter
-
+import copier
 
 @fixture
 def bake_cookie(tmpdir):
     def bake(**ctx):
+        data = dict(full_name="Full Name", github_username="snail", email="example@example.com",
+                    project_name="my-prompt",
+                    project_short_description="description", )
+        data.update(ctx)
         template = Path(__file__).parent.parent
-        assert (template / "cookiecutter.json").exists(), "Not the root path"
-        return cookiecutter(
-            str(template), no_input=True, extra_context=ctx, output_dir=tmpdir
+        assert template.exists(), "Not the root path"
+        return copier.copy(
+            str(template),
+            dst_path=tmpdir,
+            data=data,
+            defaults=True
         )
 
     return bake

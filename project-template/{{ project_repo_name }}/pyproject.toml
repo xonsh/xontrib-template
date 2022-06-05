@@ -1,14 +1,14 @@
-{% if cookiecutter.package_manager == 'poetry' %}
+{% if package_manager == 'poetry' %}
 [tool.poetry]
-name = "{{cookiecutter.project_repo_name}}"
-version = "{{cookiecutter.version}}"
-description = "{{cookiecutter.project_short_description}}"
-authors = ["{{cookiecutter.full_name}} <{{cookiecutter.email}}>"]
+name = "{{project_repo_name}}"
+version = "{{version}}"
+description = "{{project_short_description}}"
+authors = ["{{full_name}} <{{email}}>"]
 
 license = "MIT"
 readme = "README.md"
 
-repository = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_repo_name}}"
+repository = "https://github.com/{{github_username}}/{{project_repo_name}}"
 keywords = ['xontrib', 'xonsh']
 classifiers = [
     "Intended Audience :: Developers",
@@ -23,10 +23,10 @@ classifiers = [
 packages = [{ include = "xontrib" }]
 {% else %}
 [project]
-name = "{{cookiecutter.project_repo_name}}"
-version = "{{cookiecutter.version}}"
+name = "{{project_repo_name}}"
+version = "{{version}}"
 license = {file = "LICENSE"}
-description = "{{cookiecutter.project_short_description}}"
+description = "{{project_short_description}}"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
@@ -38,35 +38,38 @@ classifiers = [
 requires-python = ">=3.6"
 dependencies = ["xonsh"]
 [[project.authors]]
-name = "{{cookiecutter.full_name}}"
-email = "{{cookiecutter.email}}"
+name = "{{full_name}}"
+email = "{{email}}"
 [project.readme]
 file = "README.md"
 content-type = "text/markdown"
 {% endif %}
 
-{% if cookiecutter.package_manager == 'poetry' %}
+{% if package_manager == 'poetry' %}
 [tool.poetry.urls]
 {% else %}
 [project.urls]
 {% endif %}
-Homepage = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_repo_name}}"
-Documentation = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_repo_name}}/blob/master/README.md"
-Code = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_repo_name}}"
-"Issue tracker" = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_repo_name}}/issues"
+Homepage = "https://github.com/{{github_username}}/{{project_repo_name}}"
+Documentation = "https://github.com/{{github_username}}/{{project_repo_name}}/blob/master/README.md"
+Code = "https://github.com/{{github_username}}/{{project_repo_name}}"
+"Issue tracker" = "https://github.com/{{github_username}}/{{project_repo_name}}/issues"
 
-{% if cookiecutter.package_manager == 'poetry' %}
+{% if package_manager == 'poetry' %}
 [tool.poetry.dependencies]
 python = ">=3.7"
 xonsh = ">=0.11"
 {% endif %}
 
-{% if cookiecutter.package_manager == 'poetry' %}
+{% if package_manager == 'poetry' %}
 [tool.poetry.dev-dependencies]
-pytest = ">=6.0"
+pytest = ">=7.0"
+{% else %}
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
 {% endif %}
 
-{% if cookiecutter.package_manager == 'poetry' %}
+{% if package_manager == 'poetry' %}
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
