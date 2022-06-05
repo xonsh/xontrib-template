@@ -6,7 +6,7 @@ A <a href="https://github.com/audreyr/cookiecutter">cookiecutter</a> template fo
 If you like the template click ⭐ on the repo.
 </p>
 
-[![asciicast](https://asciinema.org/a/499601.svg)](https://asciinema.org/a/499601)
+[![asciicast](https://asciinema.org/a/499605.svg)](https://asciinema.org/a/499605)
 
 ## Why use this template?
 
