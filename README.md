@@ -21,10 +21,18 @@ This template includes good pack of prebuilt files:
 
 ## Create new xontrib
 
-To create a `xontrib` from this template just run:
+This template uses [copier](https://copier.readthedocs.io/en/stable/). We can install it as a CLI using [pipx](https://pypa.github.io/pipx/):
+
 ```bash
-pip install cookiecutter
-cookiecutter gh:xonsh/xontrib-cookiecutter
+pipx install copier
+pipx inject copier jinja2-time
+pipx inject copier cookiecutter
+```
+
+Now to create your new `xontrib`:
+
+```bash
+copier gh:xonsh/xontrib-template .
 ```
 
 ## Advent of [PEP-621](https://peps.python.org/pep-0621/) 
@@ -64,9 +72,4 @@ tree -a xontrib-my-prompt/
 # └── xontrib
 #     └── my_prompt.xsh
 
-pip install -U xontrib-my-prompt/
-# Successfully installed xontrib-my-prompt-0.1.0
-  
-xontrib load my_prompt
-# This is xontrib-my-prompt!
 ```
