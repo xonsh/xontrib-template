@@ -6,6 +6,8 @@ A <a href="https://github.com/audreyr/cookiecutter">cookiecutter</a> template fo
 If you like the template click ⭐ on the repo.
 </p>
 
+[![asciicast](https://asciinema.org/a/499601.svg)](https://asciinema.org/a/499601)
+
 ## Why use this template?
 
 This template includes good pack of prebuilt files: 
@@ -43,33 +45,3 @@ Older projects can use the following tools to upgrade their setup to use pyproje
 * https://ini2toml.readthedocs.io/en/latest/setuptools_pep621.html
 * https://validate-pyproject.readthedocs.io/
 * https://github.com/denkiwakame/py-tiny-pkg
-
-## Example
-```bash
-cookiecutter gh:xonsh/xontrib-cookiecutter 
-# full_name [Snail From Conch]: <ENTER>
-# email [your@email.address]: <ENTER>
-# github_username [snail]: <ENTER>
-# project_name [my-prompt]: <ENTER>
-# project_repo_name [xontrib-my-prompt]: <ENTER> 
-# project_package_name [my_prompt]: <ENTER>
-# project_short_description [A short description of the project.]: <ENTER> 
-# version [0.1.0]: <ENTER>
-
-
-tree -a xontrib-my-prompt/
-# xontrib-my-prompt/
-# ├── .gitattributes
-# ├── .github
-# │    └── workflows
-# │         └── push-test.yml
-# ├── .gitignore
-# ├── LICENSE
-# ├── MANIFEST.in
-# ├── README.md
-# ├── requirements.txt
-# ├── setup.py
-# └── xontrib
-#     └── my_prompt.xsh
-
-```
