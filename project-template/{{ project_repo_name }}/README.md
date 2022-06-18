@@ -31,12 +31,6 @@ xontrib load {{project_package_name}}
 
 ...
 
-## Releasing your package
-
-- Bump the version of your package.
-- Create a GitHub release (The release notes are automatically generated as a draft release after each push).
-- And publish with `poetry publish --build` or `twine`
-
 ## Credits
 
 This package was created with [xontrib cookiecutter template](https://github.com/xonsh/xontrib-cookiecutter).
@@ -44,7 +38,15 @@ This package was created with [xontrib cookiecutter template](https://github.com
 
 --------------------
 
-## xontrib promotion (READ and REMOVE THIS SECTION)
+## READ and REMOVE THIS SECTION
+
+### Releasing your package
+
+- Bump the version of your package.
+- Create a GitHub release (The release notes are automatically generated as a draft release after each push).
+- And publish with `poetry publish --build` or `twine`
+
+### Promotion of your xontrib
 
 After you create the xontrib repository you can do some helpful tasks to spread the word about your xontrib.
 
