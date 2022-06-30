@@ -18,10 +18,18 @@ xpip install {{project_repo_name}}
 
 ## Usage
 
+{% if enable_autoloading %}
+This xontrib will get loaded automatically for interactive sessions.
+To stop this, set
+
+```xonsh
+$XONTRIBS_AUTOLOAD_DISABLED = {"ptk_shell", }
+```
+{% else %}
 ```bash
 xontrib load {{project_package_name}}
-# TODO: what's next?
 ```
+{% endif %}
 
 ## Examples
 
@@ -64,4 +72,4 @@ After you create the xontrib repository you can do some helpful tasks to spread 
 
 **Add preview image**. Add the image to repository "Settings" - "Options" - "Social preview". It allows to show preview image in Github Topics and social networks.
 
-**Add xontrib to the xonsh**. To show xontrib name in `xontrib list` in xonsh add it to the [xonsh/xontribs_meta.py](https://github.com/xonsh/xonsh/blob/master/xonsh/xontribs_meta.py).
+**Add xontrib to the awesome-list**. To make your xontrib more discoverable, please add it to the [awesome-xontribs](https://github.com/xonsh/awesome-xontribs).
