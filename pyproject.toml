@@ -1,23 +1,33 @@
-[tool.poetry]
+[build-system]
+requires = [
+    "setuptools>=62",
+    "wheel", # for bdist package distribution
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+# PEP 621 project metadata
+# See https://www.python.org/dev/peps/pep-0621/
 name = "xontrib-cookiecutter"
 version = "0.1.0"
 description = "Cookiecutter template for Xontrib"
-authors = ["Your Name <you@example.com>"]
-license = "MIT"
+authors = [
+    { name = "Your Name", email = "you@example.com" },
+]
+license = { text = "MIT" }
+requires-python = ">=3.7,<4.0"
+dependencies = [
+    "copier==6.*",
+    "cookiecutter<2.0.0,>=1.7.3",
+    "jinja2-time",
+]
 
-[tool.poetry.dependencies]
-python = "^3.7"
-validate-pyproject = {extras = ["all"], version = "^0.7.2"}
-tomli = "^2.0.1"
-copier = "6.*"
-cookiecutter = "^1.7.3"
-
-[tool.poetry.dev-dependencies]
-pytest = ">=7.1.1"
-
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "validate-pyproject[all]<1.0.0,>=0.7.2",
+    "tomli<3.0.0,>=2.0.1",
+]
 
 [tool.pytest.ini_options]
 testpaths = [
