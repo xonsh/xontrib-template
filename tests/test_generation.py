@@ -1,14 +1,14 @@
 import pytest
 
-from .data import SETUP_TOOLS_FILES, POETRY_FILES
-from .helpers import get_all_files
+from .helpers import get_all_files, get_expected_files
 
 
-@pytest.mark.parametrize("package_manager,files_expected", [
-    ["setuptools", SETUP_TOOLS_FILES],
-    ["poetry", POETRY_FILES]
+@pytest.mark.parametrize("autoloading", [False, True])
+@pytest.mark.parametrize("builder", [
+    "setuptools", "poetry"
 ])
-def test_pip(bake_cookie, package_manager, files_expected):
-    out = bake_cookie(package_manager=package_manager)
-    files = set(get_all_files(out.dst_path))
-    assert files == files_expected
+def test_it_generates(bake_cookie, builder, autoloading):
+    out = bake_cookie(package_manager=builder, enable_autoloading=autoloading)
+    expected_fields = get_expected_files(builder, autoloading)
+    files = set(get_all_files(out.dst_path, ))
+    assert files == expected_fields

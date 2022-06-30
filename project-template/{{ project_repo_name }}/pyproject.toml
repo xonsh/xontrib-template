@@ -37,11 +37,11 @@ classifiers = [
     "Topic :: System :: System Shells",
     "Topic :: Terminals",
 ]
-requires-python = ">=3.6"
+requires-python = ">=3.8"
 dependencies = ["xonsh>=0.12.5"]
-[[project.authors]]
-name = "{{full_name}}"
-email = "{{email}}"
+authors = [
+    { name = "{{full_name}}", email = "{{email}}" },
+]
 [project.readme]
 file = "README.md"
 content-type = "text/markdown"
@@ -49,7 +49,7 @@ content-type = "text/markdown"
 
 {% if enable_autoloading %}
 [{% if package_manager == 'poetry' %}tool.poetry.plugins{% else %}project.entry-points{% endif %}."xonsh.xontribs"]
-"{{project_package_name}}" = "{{project_repo_name}}.main"
+"{{project_package_name}}" = "{{ py_module_name }}.main"
 {% endif %}
 
 {% if package_manager == 'poetry' %}
