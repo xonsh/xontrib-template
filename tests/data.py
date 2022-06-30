@@ -14,11 +14,16 @@ COMMON_FILES = {
     'pyproject.toml',
     'tests/__init__.py',
     'tests/test_xontrib.py',
+}
+
+AUTO_LOADED = {
+    'xontrib_my_prompt/main.py',
+    'xontrib_my_prompt/__init__.py'
+}
+OLD_STYLE = {
     'xontrib/my_prompt.py'
 }
 
-SETUP_TOOLS_FILES = COMMON_FILES.union({
+SETUP_TOOLS_ONLY = {
     'setup.py',
-})
-
-POETRY_FILES = COMMON_FILES
+}

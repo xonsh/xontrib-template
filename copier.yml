@@ -31,11 +31,6 @@ project_repo_name:
   default: xontrib-{{ project_name|slugify }}
   help: full repository name. Mostly the default is good.
 
-project_package_name:
-  type: str
-  default: "{{ project_name|slugify(separator='_') }}"
-  help: name of the Python module created inside the 'xontrib/' namespace package
-
 project_short_description:
   type: str
   help: A short description of the project.
@@ -52,17 +47,31 @@ enable_autoloading:
   help: Enable auto-loading the xontrib when installed?
   default: true
 
+project_package_name:
+  type: str
+  default: "{{ project_name|slugify(separator='_') }}"
+  help: "{% if enable_autoloading %}
+  name of the xontrib/plugin
+  {% else %}
+  name of the Python module created inside the 'xontrib/' namespace package
+  {% endif %}"
+
+py_module_name:
+  # this is not asked by reused across the template and useful only when autoloading is enabled
+  when: false
+  default: "{{project_repo_name|slugify(separator='_')}}"
+
 has_aliases:
-  type: boolean
+  type: bool
   help: Do you want to have alias functions?
   when: "{{ enable_autoloading }}"
-  default: {% if 'alias' in project_short_description %}true{% else %}false{% endif %}
+  default: "{% if 'alias' in project_short_description %}yes{% else %}no{% endif %}"
 
 has_events:
-  type: boolean
+  type: bool
   help: Do you want to have event handlers?
   when: "{{ enable_autoloading }}"
-  default: {% if 'event' in project_short_description %}true{% else %}false{% endif %}
+  default: "{% if 'event' in project_short_description %}yes{% else %}no{% endif %}"
 
 enable_pre_commit_hooks:
   type: bool
@@ -71,8 +80,11 @@ enable_pre_commit_hooks:
 
 pure_py:
   type: bool
+  # use pure version when autoloading is installed.
+  # Though possible, the reason is that the project is getting too complex providing all the options.
+  when: "{{ not enable_autoloading }}"
   help: Use Only pure Python for developing the extension?
-  default: yes
+  default: "yes"
 
 version:
   help: project version
