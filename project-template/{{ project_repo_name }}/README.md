@@ -31,6 +31,12 @@ xontrib load {{project_package_name}}
 
 ...
 
+## Releasing your package
+
+- Bump the version of your package.
+- Create a GitHub release (The release notes are automatically generated as a draft release after each push).
+- And publish with `poetry publish --build` or `twine`
+
 ## Credits
 
 This package was created with [xontrib template](https://github.com/xonsh/xontrib-template).
@@ -38,15 +44,7 @@ This package was created with [xontrib template](https://github.com/xonsh/xontri
 
 --------------------
 
-## READ and REMOVE THIS SECTION
-
-### Releasing your package
-
-- Bump the version of your package.
-- Create a GitHub release (The release notes are automatically generated as a draft release after each push).
-- And publish with `poetry publish --build` or `twine`
-
-### Promotion of your xontrib
+## Xontrib Promotion (READ and REMOVE THIS SECTION)
 
 After you create the xontrib repository you can do some helpful tasks to spread the word about your xontrib.
 
