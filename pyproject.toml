@@ -9,13 +9,13 @@ build-backend = "setuptools.build_meta"
 # PEP 621 project metadata
 # See https://www.python.org/dev/peps/pep-0621/
 name = "xontrib-cookiecutter"
-version = "0.1.0"
+version = "0.2.0"
 description = "Cookiecutter template for Xontrib"
 authors = [
     { name = "Your Name", email = "you@example.com" },
 ]
 license = { text = "MIT" }
-requires-python = ">=3.7,<4.0"
+requires-python = ">=3.8,<4.0"
 dependencies = [
     "copier==6.*",
     "cookiecutter<2.0.0,>=1.7.3",
@@ -27,9 +27,12 @@ dev = [
     "pytest>=7.0",
     "validate-pyproject[all]<1.0.0,>=0.7.2",
     "tomli<3.0.0,>=2.0.1",
+    "xonsh>=0.12.5",
 ]
 
 [tool.pytest.ini_options]
 testpaths = [
     "tests",
 ]
+[tool.pdm]
+[tool.pdm.dev-dependencies]
