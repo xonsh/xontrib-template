@@ -42,9 +42,45 @@ project_short_description:
 
 package_manager:
   type: str
+  help: Choose a build backend for the project
   choices:
     - setuptools
     - poetry
+
+enable_autoloading:
+  type: bool
+  help: Enable auto-loading the xontrib when installed?
+  default: true
+
+has_aliases:
+  type: boolean
+  help: Do you want to have alias functions?
+  when: "{{ enable_autoloading }}"
+  default: {% if 'alias' in project_short_description %}true{% else %}false{% endif %}
+
+has_completers:
+  type: boolean
+  help: Do you want to have completion functions?
+  when: "{{ enable_autoloading }}"
+  default: {% if 'comple' in project_short_description %}true{% else %}false{% endif %}
+
+has_events:
+  type: boolean
+  help: Do you want to have event handlers?
+  when: "{{ enable_autoloading }}"
+  default: {% if 'event' in project_short_description %}true{% else %}false{% endif %}
+
+has_prompts:
+  type: boolean
+  help: Do you want to have sample prompt fields?
+  when: "{{ enable_autoloading }}"
+  default: {% if 'prompt' in project_short_description %}true{% else %}false{% endif %}
+
+has_shortcuts:
+  type: boolean
+  help: Do you want to have sample keyboard shortcuts?
+  when: "{{ enable_autoloading }}"
+  default: {% if 'shortcut' in project_short_description %}true{% else %}false{% endif %}
 
 enable_pre_commit_hooks:
   type: bool
