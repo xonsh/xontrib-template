@@ -1,6 +1,6 @@
-{% if pure_py %}
 from xonsh.built_ins import XSH
-{% else %}
+
+{% if not pure_py %}
 # Note! If you write the xontrib on Python it will work faster
 # until https://github.com/xonsh/xonsh/issues/3953 hasn't released yet.
 import xonsh
@@ -17,11 +17,8 @@ print('This is {{ project_repo_name }}!')
 {% if pure_py %}
 # Some code in Using Python API:
 var = XSH.env.get("VAR", "default")
+result = XSH.subproc_captured_stdout(['echo', '1'])
 {% else %}
 var = ${...}.get('VAR', 'default')
-{% endif %}
-{% if pure_py %}
-result = __xonsh__.subproc_captured_stdout(['echo', '1'])
-{% else %}
 result = $(echo 1)
 {% endif %}

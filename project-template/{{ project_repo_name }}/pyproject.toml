@@ -20,7 +20,9 @@ classifiers = [
     "Topic :: Terminals",
     "Programming Language :: Python :: 3",
 ]
+    {% if not enable_autoloading %}
 packages = [{ include = "xontrib" }]
+    {%- endif %}
 {% else %}
 [project]
 name = "{{project_repo_name}}"
@@ -36,13 +38,18 @@ classifiers = [
     "Topic :: Terminals",
 ]
 requires-python = ">=3.6"
-dependencies = ["xonsh"]
+dependencies = ["xonsh>=0.12.5"]
 [[project.authors]]
 name = "{{full_name}}"
 email = "{{email}}"
 [project.readme]
 file = "README.md"
 content-type = "text/markdown"
+{% endif %}
+
+{% if enable_autoloading %}
+[{% if package_manager == 'poetry' %}tool.poetry.plugins{% else %}project.entry-points{% endif %}."xonsh.xontribs"]
+"{{project_package_name}}" = "{{project_repo_name}}.main"
 {% endif %}
 
 {% if package_manager == 'poetry' %}
@@ -58,7 +65,7 @@ Code = "https://github.com/{{github_username}}/{{project_repo_name}}"
 {% if package_manager == 'poetry' %}
 [tool.poetry.dependencies]
 python = ">=3.7"
-xonsh = ">=0.11"
+xonsh = ">=0.12.5"
 {% endif %}
 
 {% if package_manager == 'poetry' %}
@@ -76,7 +83,7 @@ build-backend = "poetry.core.masonry.api"
 {% else %}
 [build-system]
 requires = [
-    "setuptools>=61",
+    "setuptools>=62",
     "wheel",               # for bdist package distribution
 ]
 build-backend = "setuptools.build_meta"
