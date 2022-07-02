@@ -35,7 +35,7 @@ def validate_pyproject_toml_generated(path: Path):
 
 
 def get_expected_files(package_manager: str, autoloading: bool):
-    files = data.COMMON_FILES.copy()
+    files = set(data.COMMON_FILES)
 
     if autoloading:
         files.update(data.AUTO_LOADED)
