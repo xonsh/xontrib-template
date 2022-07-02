@@ -88,12 +88,16 @@ requires = [
 ]
 build-backend = "setuptools.build_meta"
 [tool.setuptools]
+    {% if not enable_autoloading %}
 packages = ["xontrib"]
 package-dir = {xontrib = "xontrib"}
+    {% endif %}
 platforms = ["any"]
 include-package-data = false
 [tool.setuptools.package-data]
+    {% if not enable_autoloading %}
 xontrib = ["*.xsh"]
+    {% endif %}
 {% endif %}
 
 [tool.isort]
