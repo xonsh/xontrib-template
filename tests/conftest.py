@@ -15,6 +15,7 @@ def bake_cookie(tmpdir):
         return copier.copy(
             str(template),
             dst_path=tmpdir,
+            vcs_ref="HEAD",
             data=data,
             defaults=True
         )
