@@ -33,7 +33,7 @@ xontrib load {{project_package_name}}
 
 ## Credits
 
-This package was created with [xontrib cookiecutter template](https://github.com/xonsh/xontrib-cookiecutter).
+This package was created with [xontrib template](https://github.com/xonsh/xontrib-template).
 
 
 --------------------
