@@ -20,6 +20,7 @@ This template includes good pack of prebuilt files:
 * `.github/*_template.md` files to create Github templates for the text of issue and PR.
 * `MANIFEST.in` file to make Conda feedstock easily
 * `LICENSE` file with standard MIT license
+* `tests/` with the test suite
 
 ## Create new xontrib
 
