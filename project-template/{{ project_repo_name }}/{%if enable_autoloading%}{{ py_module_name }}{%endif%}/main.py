@@ -2,9 +2,10 @@ from xonsh.built_ins import XonshSession
 
 
 def _load_xontrib_(xsh: XonshSession, **_):
-    # Some code in Using Python API:
+    # getting environment variable
     var = xsh.env.get("VAR", "default")
-    print(var)
+
+    print("Autoloading xontrib: {{ project_repo_name }}")
 
     {% if has_events %}
     from .event_hooks import listen_cd
