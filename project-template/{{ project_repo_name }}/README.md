@@ -73,3 +73,5 @@ After you create the xontrib repository you can do some helpful tasks to spread 
 **Add preview image**. Add the image to repository "Settings" - "Options" - "Social preview". It allows to show preview image in Github Topics and social networks.
 
 **Add xontrib to the awesome-list**. To make your xontrib more discoverable, please add it to the [awesome-xontribs](https://github.com/xonsh/awesome-xontribs).
+
+**Spread the word about your xontrib**. Write a message in [xonsh Gitter chat](https://gitter.im/xonsh/xonsh?utm_source=xontrib-template&utm_medium=xontrib-template-promo&utm_campaign=xontrib-template-promo&utm_content=xontrib-template-promo) and [write a tweet](https://twitter.com/intent/tweet?text=xonsh%20is%20a%20Python-powered,%20cross-platform,%20Unix-gazing%20shell%20language%20and%20command%20prompt.&url=https://github.com/{{github_username}}/{{project_repo_name}}). 
