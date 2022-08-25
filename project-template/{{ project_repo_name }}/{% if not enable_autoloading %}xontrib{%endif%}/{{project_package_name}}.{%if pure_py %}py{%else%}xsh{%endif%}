@@ -13,7 +13,9 @@ print('This is {{ project_repo_name }}!')
 
 # Good start! Get more documentation -> https://xon.sh/contents.html#guides
 
-# accessing environment variables
+# Accessing environment variables
+# Note! If you want to create new env variables please name it with the beginning of the xontrib name
+# i.e. if the xontrib called xontrib-hello-world name the variables as XONTRIB_HELLO_WORLD_NEW_VARIABLE
 {% if pure_py %}
 # Some code in Using Python API:
 var = XSH.env.get("VAR", "default")
