@@ -50,3 +50,9 @@ Older projects can use the following tools to upgrade their setup to use pyproje
 ## Development
 
 - `copier` selects the latest tag when `--vcs-ref` option is not given. So it is important to tag the main branch after important template updates.
+
+## Links
+
+* [Awesome Xontribs](https://github.com/xonsh/awesome-xontribs)
+* [Xontribs on GitHub](https://github.com/topics/xontrib)
+
