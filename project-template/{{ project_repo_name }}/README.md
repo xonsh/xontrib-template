@@ -23,7 +23,7 @@ This xontrib will get loaded automatically for interactive sessions.
 To stop this, set
 
 ```xonsh
-$XONTRIBS_AUTOLOAD_DISABLED = {"ptk_shell", }
+$XONTRIBS_AUTOLOAD_DISABLED = {"{{project_package_name}}", }
 ```
 {% else %}
 ```bash
