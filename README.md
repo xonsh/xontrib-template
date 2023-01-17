@@ -28,6 +28,7 @@ Install [copier](https://copier.readthedocs.io/en/stable/):
 
 ```xsh
 xpip install copier jinja2-time cookiecutter
+
 # OR using pipx (https://pypa.github.io/pipx/):
 pipx install copier
 pipx inject copier jinja2-time cookiecutter
