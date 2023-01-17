@@ -11,7 +11,7 @@ If you like the idea click ⭐ on the repo and <a href="https://twitter.com/inte
 
 To install use pip:
 
-```bash
+```xsh
 xpip install {{project_repo_name}}
 # or: xpip install -U git+https://github.com/{{github_username}}/{{project_repo_name}}
 ```
@@ -22,11 +22,11 @@ xpip install {{project_repo_name}}
 This xontrib will get loaded automatically for interactive sessions.
 To stop this, set
 
-```xonsh
+```xsh
 $XONTRIBS_AUTOLOAD_DISABLED = {"{{project_package_name}}", }
 ```
 {% else %}
-```bash
+```xsh
 xontrib load {{project_package_name}}
 ```
 {% endif %}
