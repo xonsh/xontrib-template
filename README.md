@@ -24,17 +24,18 @@ This template includes good pack of prebuilt files:
 
 ## Create new xontrib
 
-This template uses [copier](https://copier.readthedocs.io/en/stable/). We can install it as a CLI using [pipx](https://pypa.github.io/pipx/):
+Install [copier](https://copier.readthedocs.io/en/stable/):
 
-```bash
+```xsh
+xpip install copier jinja2-time cookiecutter
+# OR using pipx (https://pypa.github.io/pipx/):
 pipx install copier
-pipx inject copier jinja2-time
-pipx inject copier cookiecutter
+pipx inject copier jinja2-time cookiecutter
 ```
 
-Now to create your new `xontrib`:
+Create your new xontrib:
 
-```bash
+```xsh
 copier gh:xonsh/xontrib-template .
 ```
 
