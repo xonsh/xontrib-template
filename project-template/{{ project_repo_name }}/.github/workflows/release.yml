@@ -20,7 +20,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-#  # ENABLE BELOW to auto-publish these packages to PyPI on new push with tags
+#  # THIS IS DRAFT (NOT WORKING) to auto-publish these packages to PyPI on new push with tags
 #  # This workflow contains a single job called "build"
 #  release:
 #    name: Create Release
