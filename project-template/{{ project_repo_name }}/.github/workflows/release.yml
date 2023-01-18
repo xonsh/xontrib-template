@@ -20,7 +20,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-# todo: Enable below to auto-publish these packages to PyPI on new push with tags
+#  # ENABLE BELOW to auto-publish these packages to PyPI on new push with tags
 #  # This workflow contains a single job called "build"
 #  release:
 #    name: Create Release
@@ -87,7 +87,7 @@ jobs:
 #          draft: false
 #          prerelease: false
 #
-#      - name:
+#      - name: publish pypi
 #        uses: pypa/gh-action-pypi-publish@release/v1
 #        with:
 #          user: __token__
