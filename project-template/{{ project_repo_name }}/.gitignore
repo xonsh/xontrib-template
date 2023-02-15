@@ -130,3 +130,7 @@ dmypy.json
 
 # xontrib is an implicit namespace package. DO NOT add an __init__.py file to this directory.
 xontrib/__init__.py
+
+# Copier
+.copier-answers.yml
+
