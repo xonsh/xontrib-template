@@ -35,6 +35,7 @@ jobs:
         python-version: ${{ matrix.python-version }}
 {% endraw %}
         cache: {% if package_manager == 'poetry' %}poetry{% else %}pip{% endif %}
+        cache-dependency-path: pyproject.toml
 
     - name: Install dependencies
       run: {% if package_manager == 'poetry' %}poetry install{% else %}pip install ".[dev]"{% endif %}
