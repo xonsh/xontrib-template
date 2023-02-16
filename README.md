@@ -55,9 +55,11 @@ Older projects can use the following tools to upgrade their setup to use pyproje
 
 ### How to fix [pre-commit-hooks](https://github.com/pre-commit/pre-commit-hooks)
 
+If you're using `.pre-commit-config.yaml` and have an error during testing you need fix the code i.e.:
+
 ```xsh
 xpip install pre-commit-hooks
-pre-commit run --all-files black
+pre-commit run --all-files black  # or isort, etc
 ```
 
 ## Links
