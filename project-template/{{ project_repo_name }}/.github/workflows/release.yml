@@ -1,96 +1,42 @@
 {% raw %}
-# Publish package on release branch if it's tagged with 'v*'
-name: release & publish workflow
+# This workflow will upload a Python Package using Twine when a release is created
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python#publishing-to-package-registries
 
-# Controls when the action will run.
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Upload Python Package
+
 on:
-  # Triggers the workflow on push or pull request events but only for the default branch
-  push:
-    branch: main
-    tags:
-      - 'v*'
+  release:
+    types: [published]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+permissions:
+  contents: read
+
 jobs:
-  update-release-draft:
-    runs-on: ubuntu-latest
-    steps:
-      # Drafts your next Release notes as Pull Requests are merged into "main"
-      - uses: release-drafter/release-drafter@v5
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  deploy:
 
-#  # THIS IS DRAFT (NOT WORKING) to auto-publish these packages to PyPI on new push with tags
-#  # This workflow contains a single job called "build"
-#  release:
-#    name: Create Release
-#    runs-on: ubuntu-20.04
-#    if: startsWith(github.event.ref, 'refs/tags/v')
-#
-#    strategy:
-#      matrix:
-#        python-versions: [3.8]
-#
-#    # Steps represent a sequence of tasks that will be executed as part of the job
-#    steps:
-#      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-#      - uses: actions/checkout@v2
-#
-#      - name: generate change log
-#        uses: heinrichreimer/github-changelog-generator-action@v2.1.1
-#        with:
-#          token: ${{ secrets.GITHUB_TOKEN }}
-#          issues: true
-#          issuesWoLabels: true
-#          pullRequests: true
-#          prWoLabels: true
-#          unreleased: true
-#          addSections: '{"documentation":{"prefix":"**Documentation:**","labels":["documentation"]}}'
-#          output: CHANGELOG.md
-#
-#      - uses: actions/setup-python@v2
-#        with:
-#          python-version: ${{ matrix.python-versions }}
-#
-#      - name: Install dependencies
-#        run: |
-#          python -m pip install --upgrade pip
-#          pip install tox-gh-actions poetry
-#
-#      - name: pre-publish documentation
-#        run: |
-#          poetry install -E doc
-#          poetry run mkdocs build
-#
-#      - name: publish documentation
-#        uses: peaceiris/actions-gh-pages@v3
-#        with:
-#          personal_token: ${{ secrets.PERSONAL_TOKEN }}
-#          publish_dir: ./site
-#
-#      - name: Build wheels and source tarball
-#        run: >-
-#          poetry build
-#
-#      - name: show temporary files
-#        run: >-
-#          ls -l
-#
-#      - name: create github release
-#        id: create_release
-#        uses: softprops/action-gh-release@v1
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#        with:
-#          body_path: ./CHANGELOG.md
-#          files: dist/*.whl
-#          draft: false
-#          prerelease: false
-#
-#      - name: publish pypi
-#        uses: pypa/gh-action-pypi-publish@release/v1
-#        with:
-#          user: __token__
-#          password: ${{ secrets.PYPI_API_TOKEN }}
-#          skip_existing: true
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install build
+    - name: Build package
+      run: python -m build
+    - name: Publish package
+      uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
+      with:
+        user: __token__
+        password: ${{ secrets.PYPI_API_TOKEN }}
+
 {% endraw %}
