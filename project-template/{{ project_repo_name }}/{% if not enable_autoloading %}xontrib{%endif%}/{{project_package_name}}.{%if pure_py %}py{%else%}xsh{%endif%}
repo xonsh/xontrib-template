@@ -1,3 +1,6 @@
+"""
+TODO: Please add here the short description of the xontrib to show in `xonfig web`.
+"""
 from xonsh.built_ins import XSH
 
 {% if not pure_py %}
