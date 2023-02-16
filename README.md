@@ -53,6 +53,13 @@ Older projects can use the following tools to upgrade their setup to use pyproje
 
 - `copier` selects the latest tag when `--vcs-ref` option is not given. So it is important to tag the main branch after important template updates.
 
+### How to fix [pre-commit-hooks](https://github.com/pre-commit/pre-commit-hooks)
+
+```xsh
+xpip install pre-commit-hooks
+pre-commit run --all-files black
+```
+
 ## Links
 
 * [Awesome Xontribs](https://github.com/xonsh/awesome-xontribs)
