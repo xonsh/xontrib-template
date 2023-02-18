@@ -18,6 +18,7 @@ This template includes good pack of prebuilt files:
 * `.gitignore` file with standard list of directories to ignore
 * `.github/workflow/push-test.yml` to automatically test the code using Github Actions
 * `.github/*_template.md` files to create Github templates for the text of issue and PR.
+* `.pre-commit-config.yaml` file with [pre-commit-hooks](https://github.com/pre-commit/pre-commit-hooks)
 * `MANIFEST.in` file to make Conda feedstock easily
 * `LICENSE` file with standard MIT license
 * `tests/` with the test suite
