@@ -50,6 +50,10 @@ Older projects can use the following tools to upgrade their setup to use pyproje
 * https://validate-pyproject.readthedocs.io/
 * https://github.com/denkiwakame/py-tiny-pkg
 
+## If you have an idea for xontrib but have no time to implement
+
+Feel free to [create an issue with your idea](https://github.com/xonsh/xontrib-template/issues/new).
+
 ## Development
 
 - `copier` selects the latest tag when `--vcs-ref` option is not given. So it is important to tag the main branch after important template updates.
