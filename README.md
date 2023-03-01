@@ -52,7 +52,8 @@ Older projects can use the following tools to upgrade their setup to use pyproje
 
 ## If you have an idea for xontrib but have no time to implement
 
-Feel free to [create an issue with your idea](https://github.com/xonsh/xontrib-template/issues/new).
+* [Create an issue with your idea](https://github.com/xonsh/xontrib-template/issues/new?assignees=&labels=idea&template=idea.md&title=Idea%3A+). 
+* [Top ideas](https://github.com/xonsh/xontrib-template/issues?q=is%3Aissue+is%3Aopen+label%3Aidea+sort%3Areactions-%2B1-desc).
 
 ## Development
 
