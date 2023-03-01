@@ -1,7 +1,7 @@
 ---
 name: The idea of new xontrib
 about: Share your idea of new xontrib
-title: 'Idea:'
+title: 'Idea: '
 labels: 'idea'
 assignees: ''
 
