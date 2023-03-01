@@ -1,6 +1,6 @@
 ---
 name: New Issue
-about: Create issue or tell about idea
+about: Create a report to help us improve
 title: ''
 labels: ''
 assignees: ''
