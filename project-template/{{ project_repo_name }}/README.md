@@ -39,6 +39,16 @@ xontrib load {{project_package_name}}
 
 ...
 
+## Development
+{% if enable_pre_commit_hooks %}
+- activate [pre-commit](https://github.com/pre-commit/pre-commit) hooks
+```sh
+# install pre-commit plugins and activate the commit hook 
+pre-commit install
+pre-commit autoupdate
+```
+{% endif %}
+
 ## Releasing your package
 
 - Bump the version of your package.
