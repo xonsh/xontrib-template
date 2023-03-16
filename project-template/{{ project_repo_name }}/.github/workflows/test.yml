@@ -6,7 +6,36 @@ on:
 
 jobs:
   testing:
-    # reuse workflow definitions
-    uses: xonsh/actions/.github/workflows/test-pip-xontrib.yml@main
-    with:
-      cache-dependency-path: pyproject.toml
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+          - windows-latest
+        python-version:
+          - "3.8"
+          - "3.9"
+          - "3.10"
+          - "3.11"
+    runs-on: {% raw %}${{ matrix.os }}{% endraw %}
+    steps:
+    - uses: actions/checkout@v3
+{%- if package_manager == 'poetry' %}
+    - name: Install poetry
+      run: pipx install poetry
+{% endif -%}
+{% raw %}
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ matrix.python-version }} {% endraw %}
+        cache: {% if package_manager == 'poetry' %}poetry{% else %}pip{% endif %}
+        cache-dependency-path: pyproject.toml
+
+    - uses: pre-commit/action@v3.0.0
+    - name: Install dependencies
+      run: {% if package_manager == 'poetry' %}poetry install{% else %}pip install ".[dev]"{% endif %}
+    - name: Run tests
+      run: |
+        xonsh -c "xontrib load {{ project_package_name}}"
+        poetry run pytest
