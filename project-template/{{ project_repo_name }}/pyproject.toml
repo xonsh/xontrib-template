@@ -100,9 +100,6 @@ xontrib = ["*.xsh"]
     {% endif %}
 {% endif %}
 
-[tool.isort]
-profile = "black"
-
 [tool.black]
 include = '\.pyi?$'
 force-exclude = '''
@@ -121,3 +118,7 @@ force-exclude = '''
   | disk-cache.sqlite3
 )/
 '''
+
+[tool.ruff]
+# Enable flake8-bugbear (`B`) rules.
+select = ["E", "F", "B"]
