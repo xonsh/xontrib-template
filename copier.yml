@@ -12,15 +12,15 @@ _jinja_extensions:
 
 full_name:
   type: str
-  help: Enter your full name. This will appear in the License generated and `setup.py`'s authors field.
+  help: Enter your full name. This will appear in the License generated and `pyproject.toml`'s authors field.
+
+email:
+  type: str
+  help: Your E-mail address. This will appear in the License generated and `pyproject.toml`'s authors field.
 
 github_username:
   type: str
   help: You Github username or organization name under which the projects lives.
-
-email:
-  type: str
-  help: Your E-mail address. This will appear in the License generated and `setup.py`'s authors field.
 
 project_name:
   type: str
