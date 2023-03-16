@@ -1,7 +1,7 @@
 # see https://copier.readthedocs.io/en/stable/configuring/
 
 ### Settings ###
-_min_copier_version: "6.0.0"
+_min_copier_version: "7.0.0"
 _subdirectory: project-template
 _templates_suffix: "" # empty suffix will process all files
 _jinja_extensions:
