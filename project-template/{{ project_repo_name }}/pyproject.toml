@@ -120,5 +120,13 @@ force-exclude = '''
 '''
 
 [tool.ruff]
-# Enable flake8-bugbear (`B`) rules.
-select = ["E", "F", "B"]
+select = [
+    "E",
+    "F",
+    "B", # flake8-bugbear
+    "I", # isort
+    "UP", # pyupgrade
+    "SIM", # simplify
+    "TCH", # flake8-type-checking
+    "RUF", # ruff specific rules
+]
