@@ -10,7 +10,7 @@ build-backend = "setuptools.build_meta"
 # See https://www.python.org/dev/peps/pep-0621/
 name = "xontrib-template"
 version = "0.2.0"
-description = "A copier template for Xontrib"
+description = "Full-featured template for building extension (xontrib) for the xonsh shell."
 authors = [
     { name = "Your Name", email = "you@example.com" },
 ]
