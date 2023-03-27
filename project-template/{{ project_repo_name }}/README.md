@@ -2,7 +2,7 @@
 {{project_short_description}}
 </p>
 
-<p align="center">  
+<p align="center">
 If you like the idea click ⭐ on the repo and <a href="https://twitter.com/intent/tweet?text=Nice%20xontrib%20for%20the%20xonsh%20shell!&url=https://github.com/{{github_username}}/{{project_repo_name}}" target="_blank">tweet</a>.
 </p>
 
@@ -43,7 +43,7 @@ xontrib load {{project_package_name}}
 {% if enable_pre_commit_hooks %}
 - activate [pre-commit](https://github.com/pre-commit/pre-commit) hooks
 ```sh
-# install pre-commit plugins and activate the commit hook 
+# install pre-commit plugins and activate the commit hook
 pre-commit install
 pre-commit autoupdate
 ```
@@ -74,7 +74,7 @@ After you create the xontrib repository you can do some helpful tasks to spread 
 
 **Add xontrib to the awesome-list**. To make your xontrib more discoverable, please add it to the [awesome-xontribs](https://github.com/xonsh/awesome-xontribs).
 
-**Spread the word about your xontrib**. Write a message in [xonsh Gitter chat](https://gitter.im/xonsh/xonsh?utm_source=xontrib-template&utm_medium=xontrib-template-promo&utm_campaign=xontrib-template-promo&utm_content=xontrib-template-promo) and [write a tweet](https://twitter.com/intent/tweet?text=xonsh%20is%20a%20Python-powered,%20cross-platform,%20Unix-gazing%20shell%20language%20and%20command%20prompt.&url=https://github.com/{{github_username}}/{{project_repo_name}}). 
+**Spread the word about your xontrib**. Write a message in [xonsh Gitter chat](https://gitter.im/xonsh/xonsh?utm_source=xontrib-template&utm_medium=xontrib-template-promo&utm_campaign=xontrib-template-promo&utm_content=xontrib-template-promo) and [write a tweet](https://twitter.com/intent/tweet?text=xonsh%20is%20a%20Python-powered,%20cross-platform,%20Unix-gazing%20shell%20language%20and%20command%20prompt.&url=https://github.com/{{github_username}}/{{project_repo_name}}).
 
 **Easiest way to publish your xontrib to PyPi via Github Actions**. Users can install your xontrib via `pip install xontrib-myxontrib`. Easiest way to achieve it is to use Github Actions:
 

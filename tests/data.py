@@ -6,6 +6,7 @@ COMMON_FILES = {
     '.github/pull_request_template.md',
     '.github/release-drafter.yml',
     '.github/workflows/release.yml',
+    '.github/workflows/release-drafter.yml',
     '.github/workflows/test.yml',
     '.gitignore',
     '.pre-commit-config.yaml',

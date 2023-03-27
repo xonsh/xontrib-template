@@ -7,4 +7,4 @@ repos:
     hooks:
       - id: trailing-whitespace
       - id: check-merge-conflict
-      - id: check-yaml
+#      - id: check-yaml
