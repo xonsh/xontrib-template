@@ -66,7 +66,7 @@ This package was created with [xontrib template](https://github.com/xonsh/xontri
 
 * Check that your repository name starts from `xontrib-` prefix. It helps Github search find it.
 
-* Add `xonsh`, `xontrib` and other thematic topics to the repository "About" setting. 
+* Add `xonsh`, `xontrib` and other thematic topics to the repository "About" setting.
 
 * Add preview image in "Settings" - "Options" - "Social preview". It allows to show preview image in Github Topics and social networks e.g. Twitter.
 
