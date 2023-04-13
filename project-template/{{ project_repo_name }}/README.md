@@ -62,26 +62,18 @@ This package was created with [xontrib template](https://github.com/xonsh/xontri
 
 --------------------
 
-## Xontrib Promotion (READ and REMOVE THIS SECTION)
+## Xontrib Promotion (DO and REMOVE THIS SECTION)
 
-After you create the xontrib repository you can do some helpful tasks to spread the word about your xontrib.
+* Check that your repository name starts from `xontrib-` prefix. It helps Github search find it.
 
-**Repository name**. It's a good practice to add `xontrib-` prefix before the name of your repository. It helps Github search find it.
+* Add `xonsh`, `xontrib` and other thematic topics to the repository "About" setting. 
 
-**Add topics to the repository**. To show the xontrib repository in Github Topics please add topics `xonsh` and `xontrib` to the repository "About" setting. Also add thematic topics, for example,  `ssh` if your xontrib helps work with `ssh`.
+* Add preview image in "Settings" - "Options" - "Social preview". It allows to show preview image in Github Topics and social networks e.g. Twitter.
 
-**Add preview image**. Add the image to repository "Settings" - "Options" - "Social preview". It allows to show preview image in Github Topics and social networks.
+* Enable "Sponsorship" in "Settings" - "Features" - Check "Sponsorships".
 
-**Add xontrib to the awesome-list**. To make your xontrib more discoverable, please add it to the [awesome-xontribs](https://github.com/xonsh/awesome-xontribs).
+* Add xontrib to the [awesome-xontribs](https://github.com/xonsh/awesome-xontribs).
 
-**Spread the word about your xontrib**. Write a message in [xonsh Gitter chat](https://gitter.im/xonsh/xonsh?utm_source=xontrib-template&utm_medium=xontrib-template-promo&utm_campaign=xontrib-template-promo&utm_content=xontrib-template-promo) and [write a tweet](https://twitter.com/intent/tweet?text=xonsh%20is%20a%20Python-powered,%20cross-platform,%20Unix-gazing%20shell%20language%20and%20command%20prompt.&url=https://github.com/{{github_username}}/{{project_repo_name}}).
+* Publish your xontrib to PyPi via Github Actions and users can install your xontrib via `xpip install xontrib-myxontrib`. Easiest way to achieve it is to use Github Actions. Register to https://pypi.org/ and [create API token](https://pypi.org/help/#apitoken). Go to repository "Settings" - "Secrets" and your PyPI API token as `PYPI_API_TOKEN` as a "Repository Secret". Now when you create new Release the Github Actions will publish the xontrib to PyPi automatically. Release status will be in Actions sction. See also `.github/workflows/release.yml`.
 
-**Easiest way to publish your xontrib to PyPi via Github Actions**. Users can install your xontrib via `pip install xontrib-myxontrib`. Easiest way to achieve it is to use Github Actions:
-
-1. Register to https://pypi.org/ and [create API token](https://pypi.org/help/#apitoken).
-2. Go to repository "Settings" - "Secrets" and your PyPI API token as `PYPI_API_TOKEN` as a "Repository Secret".
-3. Click "Actions" link on your Github repository.
-   1. Click on "New Workflow"
-   2. Click "Configure" on "Publish Python Package" Action.
-4. Commit the config without any changes.
-5. Now when you create new Release the Github Actions will publish the xontrib to PyPi automatically. Release status will be in Actions sction.
+* Write a message to: [xonsh Gitter chat](https://gitter.im/xonsh/xonsh?utm_source=xontrib-template&utm_medium=xontrib-template-promo&utm_campaign=xontrib-template-promo&utm_content=xontrib-template-promo), [Twitter](https://twitter.com/intent/tweet?text=xonsh%20is%20a%20Python-powered,%20cross-platform,%20Unix-gazing%20shell%20language%20and%20command%20prompt.&url=https://github.com/{{github_username}}/{{project_repo_name}}), [Reddit](https://www.reddit.com/r/xonsh), [Mastodon](https://mastodon.online/).
