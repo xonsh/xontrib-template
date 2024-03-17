@@ -33,7 +33,7 @@ xpip install copier jinja2-time cookiecutter
 
 # OR using pipx (https://pypa.github.io/pipx/):
 pipx install copier>=9
-pipx inject copier jinja2-time cookiecutter
+pipx inject copier copier-templates-extensions
 ```
 
 Create your new xontrib:

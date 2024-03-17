@@ -18,8 +18,7 @@ license = { text = "MIT" }
 requires-python = ">=3.8,<4.0"
 dependencies = [
     "copier>=9",
-    "cookiecutter<2.0.0,>=1.7.3",
-    "jinja2-time",
+    "copier-templates-extensions"
 ]
 
 [project.optional-dependencies]
