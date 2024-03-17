@@ -1,14 +1,9 @@
 repos:
-  - repo: https://github.com/charliermarsh/ruff-pre-commit
+  - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: ""
     hooks:
       - id: ruff
-
-  - repo: https://github.com/ambv/black
-    rev: ""
-    hooks:
-      - id: black
-        language_version: python3.8
+      - id: ruff-format
 
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: "" # Use the sha / tag you want to point at
