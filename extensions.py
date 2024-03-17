@@ -2,6 +2,7 @@
 # Thanks to the original author
 
 import re
+import shutil
 import subprocess
 import unicodedata
 from datetime import date
@@ -17,6 +18,19 @@ def git_user_email() -> str:
     return subprocess.getoutput("git config user.email").strip()
 
 
+def github_username() -> str:
+    # run if gh is installed
+    if not shutil.which("gh"):
+        return ""
+    import json
+
+    data = subprocess.getoutput("gh api user").strip()
+    try:
+        return json.loads(data)["login"]
+    except json.JSONDecodeError:
+        return ""
+
+
 def slugify(value, separator="-"):
     value = (
         unicodedata.normalize("NFKD", str(value))
@@ -30,8 +44,9 @@ def slugify(value, separator="-"):
 class GitExtension(Extension):
     def __init__(self, environment):
         super().__init__(environment)
-        environment.globals["git_user_name"] = git_user_name
-        environment.globals["git_user_email"] = git_user_email
+        environment.globals["git_user_name"] = git_user_name()
+        environment.globals["git_user_email"] = git_user_email()
+        environment.globals["github_username"] = github_username()
 
 
 class SlugifyExtension(Extension):

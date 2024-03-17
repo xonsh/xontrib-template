@@ -13,6 +13,7 @@ _jinja_extensions:
 ### question ###
 
 full_name:
+  default: "{{ git_user_name }}"
   type: str
   help: Enter your full name. This will appear in the License generated and `pyproject.toml`'s authors field.
 
@@ -22,7 +23,7 @@ email:
   help: Your E-mail address. This will appear in the License generated and `pyproject.toml`'s authors field.
 
 github_username:
-  default: "{{ git_user_name }}"
+  default: "{{ github_username }}"
   type: str
   help: You Github username or organization name under which the projects lives.
 
