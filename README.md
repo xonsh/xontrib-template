@@ -39,6 +39,10 @@ pipx inject copier jinja2-time cookiecutter
 Create your new xontrib:
 
 ```xsh
+# copier 9
+copier copy --trust gh:xonsh/xontrib-template .
+
+# older versions of copier
 copier gh:xonsh/xontrib-template .
 ```
 
