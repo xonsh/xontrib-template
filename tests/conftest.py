@@ -12,12 +12,13 @@ def bake_cookie(tmpdir):
         data.update(ctx)
         template = Path(__file__).parent.parent
         assert template.exists(), "Not the root path"
-        return copier.copy(
-            str(template),
+        return copier.run_copy(
+            src_path=str(template),
             dst_path=tmpdir,
             vcs_ref="HEAD",
             data=data,
-            defaults=True
+            defaults=True,
+            unsafe=True,
         )
 
     return bake

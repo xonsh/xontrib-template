@@ -4,13 +4,9 @@ import tomli
 from . import data
 
 
-def get_all_files(path: "Path | str", root: Path = None):
-    if isinstance(path, str):
-        path = Path(path)
+def get_all_files(path: Path, root: Path = None):
     if root is None:
-        childs = list(path.iterdir())
-        assert len(childs) == 1
-        root = childs[0]
+        root = path
     for p in path.iterdir():
         if p.is_file():
             if p.name == "pyproject.toml":
