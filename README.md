@@ -32,14 +32,14 @@ Install [copier](https://copier.readthedocs.io/en/stable/):
 xpip install copier jinja2-time cookiecutter
 
 # OR using pipx (https://pypa.github.io/pipx/):
-pipx install copier
+pipx install copier>=9
 pipx inject copier jinja2-time cookiecutter
 ```
 
 Create your new xontrib:
 
 ```xsh
-copier gh:xonsh/xontrib-template .
+copier copy --trust gh:xonsh/xontrib-template .
 ```
 
 ## Advent of [PEP-621](https://peps.python.org/pep-0621/)
