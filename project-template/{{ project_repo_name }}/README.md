@@ -23,7 +23,8 @@ This xontrib will get loaded automatically for interactive sessions.
 To stop this, set
 
 ```xsh
-$XONTRIBS_AUTOLOAD_DISABLED = {"{{project_package_name}}", }
+$XONTRIBS_AUTOLOAD_DISABLED = ["{{project_package_name}}", ]
+# if you have set this for other xontribs, you should append the vale
 ```
 {% else %}
 ```xsh
