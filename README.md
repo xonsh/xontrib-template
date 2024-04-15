@@ -1,5 +1,5 @@
 <p align="center">
-A template for creating the <a href="https://github.com/xonsh/xonsh">xonsh</a> contributions called <a href="https://xon.sh/xontribs.html">xontribs</a>.
+A template for creating the <a href="https://github.com/xonsh/xonsh">xonsh</a> contributions called <a href="https://xon.sh/tutorial_xontrib.html">xontribs</a>.
 </p>
 
 <p align="center">
