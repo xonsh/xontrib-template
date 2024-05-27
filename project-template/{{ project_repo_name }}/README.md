@@ -69,6 +69,8 @@ This package was created with [xontrib template](https://github.com/xonsh/xontri
 
 * Add `xonsh`, `xontrib` and other thematic topics to the repository "About" setting.
 
+* Give your repository a star to make it more visible. It's ok to star your own repositories.
+
 * Add preview image in "Settings" - "Options" - "Social preview". It allows to show preview image in Github Topics and social networks e.g. Twitter.
 
 * Enable "Sponsorship" in "Settings" - "Features" - Check "Sponsorships".
