@@ -1,1 +1,2 @@
-*.xsh text linguist-language=Python
+*.xsh* text linguist-language=Python
+*.py* text linguist-language=Python
