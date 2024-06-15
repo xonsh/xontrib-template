@@ -21,7 +21,7 @@ print('This is {{ project_repo_name }}!')
 # i.e. if the xontrib called xontrib-hello-world name the variables as XONTRIB_HELLO_WORLD_NEW_VARIABLE
 {% if pure_py %}
 # If your xontrib was made only for interactive mode it's good practice to check this before executing.
-if XSH.env.get("XONSH_INTERACTIVE", "default"):
+if XSH.env.get("XONSH_INTERACTIVE"):
     # Some code in Using Python API:
     var = XSH.env.get("VAR", "default")
     result = XSH.subproc_captured_stdout(['echo', '1'])
