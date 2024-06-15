@@ -20,10 +20,14 @@ print('This is {{ project_repo_name }}!')
 # Note! If you want to create new env variables please name it with the beginning of the xontrib name
 # i.e. if the xontrib called xontrib-hello-world name the variables as XONTRIB_HELLO_WORLD_NEW_VARIABLE
 {% if pure_py %}
-# Some code in Using Python API:
-var = XSH.env.get("VAR", "default")
-result = XSH.subproc_captured_stdout(['echo', '1'])
+# If your xontrib was made only for interactive mode it's good practice to check this before executing.
+if XSH.env.get("XONSH_INTERACTIVE", "default"):
+    # Some code in Using Python API:
+    var = XSH.env.get("VAR", "default")
+    result = XSH.subproc_captured_stdout(['echo', '1'])
 {% else %}
-var = ${...}.get('VAR', 'default')
-result = $(echo 1)
+# If your xontrib was made only for interactive mode it's good practice to check this before executing.
+if $XONSH_INTERACTIVE:
+    var = XSH.env.get('VAR', 'default')
+    result = $(echo 1)
 {% endif %}
