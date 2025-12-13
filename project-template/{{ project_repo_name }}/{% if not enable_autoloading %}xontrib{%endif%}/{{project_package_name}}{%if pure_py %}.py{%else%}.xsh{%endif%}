@@ -1,33 +1,29 @@
 """
 TODO: Please add here the short description of the xontrib to show in `xonfig web`.
 """
-from xonsh.built_ins import XSH
-
-{% if not pure_py %}
-# Note! If you write the xontrib on Python it will work faster
-# until https://github.com/xonsh/xonsh/issues/3953 hasn't released yet.
-import xonsh
-{% endif %}
+# Good start! Get more documentation -> https://xon.sh/contents.html#guides
 
 __all__ = ()
 
-print('This is {{ project_repo_name }}!')
+{% if pure_py %}
+from xonsh.built_ins import XSH
 
+# If your xontrib was made only for interactive mode it's good practice to check this before executing.
+if XSH.env.get("XONSH_INTERACTIVE"):
+    var = XSH.env.get("VAR", "default")
+    result = XSH.subproc_captured_stdout(['echo', '1'])  # Same as `$(echo 1)`
+{% else %}
+# Note! If you write the xontrib on Python it will work faster
+# until https://github.com/xonsh/xonsh/issues/3953 hasn't released yet.
 
-# Good start! Get more documentation -> https://xon.sh/contents.html#guides
+# If your xontrib was made only for interactive mode it's good practice to check this before executing.
+if $XONSH_INTERACTIVE:
+    var = @.env.get('VAR', 'default')
+    result = $(echo 1)
+{% endif %}
 
 # Accessing environment variables
 # Note! If you want to create new env variables please name it with the beginning of the xontrib name
 # i.e. if the xontrib called xontrib-hello-world name the variables as XONTRIB_HELLO_WORLD_NEW_VARIABLE
-{% if pure_py %}
-# If your xontrib was made only for interactive mode it's good practice to check this before executing.
-if XSH.env.get("XONSH_INTERACTIVE"):
-    # Some code in Using Python API:
-    var = XSH.env.get("VAR", "default")
-    result = XSH.subproc_captured_stdout(['echo', '1'])
-{% else %}
-# If your xontrib was made only for interactive mode it's good practice to check this before executing.
-if $XONSH_INTERACTIVE:
-    var = XSH.env.get('VAR', 'default')
-    result = $(echo 1)
-{% endif %}
+
+print('This is {{ project_repo_name }}!')
