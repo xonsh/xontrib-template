@@ -6,12 +6,12 @@ TODO: Please add here the short description of the xontrib to show in `xonfig we
 __all__ = ()
 
 {% if pure_py %}
-from xonsh.built_ins import XSH
+from xonsh.built_ins import XS
 
 # If your xontrib was made only for interactive mode it's good practice to check this before executing.
 if XSH.env.get("XONSH_INTERACTIVE"):
     var = XSH.env.get("VAR", "default")
-    result = XSH.subproc_captured_stdout(['echo', '1'])  # Same as `$(echo 1)`
+    result = XS.subproc_captured_stdout(['echo', '1'])  # Same as `$(echo 1)`
 {% else %}
 # Note! If you write the xontrib on Python it will work faster
 # until https://github.com/xonsh/xonsh/issues/3953 hasn't released yet.
