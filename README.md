@@ -26,17 +26,28 @@ This template includes good pack of prebuilt files:
 
 ## Create new xontrib
 
-Install [copier](https://copier.readthedocs.io/en/stable/):
+Run [copier](https://copier.readthedocs.io/en/stable/) as a single command using [uv](https://docs.astral.sh/uv/):
 
 ```xsh
-xpip install copier jinja2-time cookiecutter
-
-# OR using pipx (https://pypa.github.io/pipx/):
-pipx install copier>=9
-pipx inject copier copier-templates-extensions
+uvx --with copier-templates-extensions copier copy --trust gh:xonsh/xontrib-template .
 ```
 
-Create your new xontrib:
+Or install copier first:
+
+```xsh
+# user-wide using pipx (https://pypa.github.io/pipx/)
+pipx install copier>=9
+pipx inject copier copier-templates-extensions
+
+# or uv
+uv tool install --with copier-templates-extensions copier
+
+# or in xonsh-env
+xpip install copier copier-templates-extensions
+xbin-add copier
+```
+
+Then create your new xontrib:
 
 ```xsh
 copier copy --trust gh:xonsh/xontrib-template .
