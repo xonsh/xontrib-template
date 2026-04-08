@@ -26,26 +26,36 @@ This template includes good pack of prebuilt files:
 
 ## Create new xontrib
 
-Run [copier](https://copier.readthedocs.io/en/stable/) as a single command using [uv](https://docs.astral.sh/uv/):
+Install [copier](https://copier.readthedocs.io/en/stable/):
 
-```xsh
-uvx --with copier-templates-extensions copier copy --trust gh:xonsh/xontrib-template .
-```
+* From pip:
 
-Or install copier first:
+  ```xsh
+  pip install copier copier-templates-extensions
+  ```
 
-```xsh
-# user-wide using pipx (https://pypa.github.io/pipx/)
-pipx install copier>=9
-pipx inject copier copier-templates-extensions
+* From xonsh-env (xonsh mamba install):
 
-# or uv
-uv tool install --with copier-templates-extensions copier
+  ```xsh
+  xpip install copier copier-templates-extensions
+  xbin-add copier
+  ```
 
-# or in xonsh-env
-xpip install copier copier-templates-extensions
-xbin-add copier
-```
+* From [uv](https://docs.astral.sh/uv/):
+
+  ```xsh
+  # Start creating a xontrib using one liner:
+  uvx --with copier-templates-extensions copier copy --trust gh:xonsh/xontrib-template .
+  # or just install:
+  uv tool install --with copier-templates-extensions copier
+  ```
+
+* From [pipx](https://pypa.github.io/pipx/):
+
+  ```xsh
+  pipx install copier>=9
+  pipx inject copier copier-templates-extensions
+  ```
 
 Then create your new xontrib:
 
