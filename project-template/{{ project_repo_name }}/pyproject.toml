@@ -69,7 +69,7 @@ xonsh = ">=0.12.5"
 {% endif %}
 
 {% if package_manager == 'poetry' %}
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 pytest = ">=7.0"
 {% else %}
 [project.optional-dependencies]
