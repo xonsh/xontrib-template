@@ -8,6 +8,9 @@ on:
       - 'v*'
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   testing:
     strategy:
@@ -17,17 +20,17 @@ jobs:
 #          - macos-latest
 #          - windows-latest
         python-version:
-          - "3.8"
-          - "3.9"
-          - "3.10"
           - "3.11"
+          - "3.12"
+          - "3.13"
+          - "3.14"
 
     runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v5
 
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v6
       with:
         python-version: ${{ matrix.python-version }}
         cache: pip

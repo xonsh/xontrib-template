@@ -2,7 +2,7 @@ COMMON_FILES = {
     ".copier-answers.yml",
     ".editorconfig",
     ".gitattributes",
-    ".github/issue_template.md",
+    ".github/ISSUE_TEMPLATE/new-issue.md",
     ".github/FUNDING.yml",
     ".github/pull_request_template.md",
     ".github/release-drafter.yml",

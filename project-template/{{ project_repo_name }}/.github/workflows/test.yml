@@ -4,6 +4,9 @@ on:
   push:
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   testing:
     strategy:
@@ -13,20 +16,20 @@ jobs:
           - macos-latest
           - windows-latest
         python-version:
-          - "3.8"
-          - "3.9"
-          - "3.10"
           - "3.11"
+          - "3.12"
+          - "3.13"
+          - "3.14"
     runs-on: {% raw %}${{ matrix.os }}{% endraw %}
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v5
 {%- if package_manager == 'poetry' %}
     - name: Install poetry
       run: pipx install poetry
 {% endif -%}
 {% raw %}
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v6
       with:
         python-version: ${{ matrix.python-version }} {% endraw %}
         cache: {% if package_manager == 'poetry' %}poetry{% else %}pip{% endif %}
@@ -38,4 +41,4 @@ jobs:
     - name: Run tests
       run: |
         xonsh -c "xontrib load {{ project_package_name}}"
-        poetry run pytest
+        {% if package_manager == 'poetry' %}poetry run pytest{% else %}pytest{% endif %}
