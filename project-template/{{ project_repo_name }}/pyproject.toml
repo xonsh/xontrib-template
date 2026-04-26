@@ -120,7 +120,7 @@ force-exclude = '''
 '''
 
 [tool.ruff]
-select = [
+lint.select = [
     "E",
     "F",
     "B", # flake8-bugbear
