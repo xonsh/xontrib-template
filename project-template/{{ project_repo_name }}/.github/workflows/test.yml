@@ -38,4 +38,4 @@ jobs:
     - name: Run tests
       run: |
         xonsh -c "xontrib load {{ project_package_name}}"
-        poetry run pytest
+        {% if package_manager == 'poetry' %}poetry run pytest{% else %}pytest{% endif %}
