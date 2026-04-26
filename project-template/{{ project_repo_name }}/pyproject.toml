@@ -37,7 +37,7 @@ classifiers = [
     "Topic :: System :: System Shells",
     "Topic :: Terminals",
 ]
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 dependencies = ["xonsh>=0.12.5"]
 authors = [
     { name = "{{full_name}}", email = "{{email}}" },
@@ -64,7 +64,7 @@ Code = "https://github.com/{{github_username}}/{{project_repo_name}}"
 
 {% if package_manager == 'poetry' %}
 [tool.poetry.dependencies]
-python = ">=3.8"
+python = ">=3.10"
 xonsh = ">=0.12.5"
 {% endif %}
 
