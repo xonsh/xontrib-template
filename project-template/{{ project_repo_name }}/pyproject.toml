@@ -71,6 +71,11 @@ xonsh = ">=0.23.0"
 {% if package_manager == 'poetry' %}
 [tool.poetry.group.dev.dependencies]
 pytest = ">=7.0"
+{% elif package_manager == 'uv' %}
+[dependency-groups]
+dev = ["pytest>=7.0"]
+
+[tool.uv]
 {% else %}
 [project.optional-dependencies]
 dev = ["pytest>=7.0"]
@@ -80,6 +85,17 @@ dev = ["pytest>=7.0"]
 [build-system]
 requires = ["poetry-core>=1.3.0"]
 build-backend = "poetry.core.masonry.api"
+{% elif package_manager == 'uv' %}
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+    {% if enable_autoloading %}
+packages = ["{{ py_module_name }}"]
+    {% else %}
+packages = ["xontrib"]
+    {% endif %}
 {% else %}
 [build-system]
 requires = [

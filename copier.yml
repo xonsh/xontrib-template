@@ -46,6 +46,7 @@ package_manager:
   choices:
     - setuptools
     - poetry
+    - uv
 
 enable_autoloading:
   type: bool

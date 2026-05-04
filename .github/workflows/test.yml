@@ -39,3 +39,63 @@ jobs:
       run: pip install ".[dev]"
     - name: Run tests
       run: pytest
+
+  e2e-load:
+    name: e2e (${{ matrix.package_manager.name }}, autoload=${{ matrix.autoloading }})
+    needs: testing
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        autoloading: ["true", "false"]
+        package_manager:
+          - { name: setuptools, install: 'pip install ".[dev]"',            run: '' }
+          - { name: poetry,     install: 'poetry install --no-interaction', run: 'poetry run ' }
+          - { name: uv,         install: 'uv sync',                         run: 'uv run ' }
+    steps:
+    - uses: actions/checkout@v5
+
+    - uses: actions/setup-python@v6
+      with:
+        python-version: "3.13"
+
+    - name: Install poetry
+      if: matrix.package_manager.name == 'poetry'
+      run: pipx install poetry
+
+    - name: Install uv
+      if: matrix.package_manager.name == 'uv'
+      uses: astral-sh/setup-uv@v6
+
+    - name: Install copier
+      run: pip install 'copier>=9' copier-templates-extensions
+
+    - name: Generate xontrib
+      run: |
+        copier copy --trust --defaults --vcs-ref=HEAD \
+          --data full_name=Test \
+          --data email=test@test.test \
+          --data github_username=test \
+          --data project_name=my-prompt \
+          --data project_short_description=test \
+          --data package_manager=${{ matrix.package_manager.name }} \
+          --data enable_autoloading=${{ matrix.autoloading }} \
+          . _generated
+
+    - name: Install generated xontrib
+      working-directory: _generated/xontrib-my-prompt
+      run: ${{ matrix.package_manager.install }}
+
+    - name: Verify autoloading
+      if: matrix.autoloading == 'true'
+      working-directory: _generated/xontrib-my-prompt
+      run: |
+        ${{ matrix.package_manager.run }}xonsh -c "xontrib list" | tee out.txt
+        grep my_prompt out.txt | grep loaded | grep auto
+
+    - name: Verify manual loading
+      if: matrix.autoloading == 'false'
+      working-directory: _generated/xontrib-my-prompt
+      run: |
+        ${{ matrix.package_manager.run }}xonsh -c 'xontrib load my_prompt; xontrib list' | tee out.txt
+        grep my_prompt out.txt | grep loaded | grep manual
