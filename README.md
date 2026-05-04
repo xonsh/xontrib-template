@@ -1,5 +1,5 @@
 <p align="center">
-A template for creating the <a href="https://github.com/xonsh/xonsh">xonsh</a> contributions called <a href="https://xon.sh/tutorial_xontrib.html">xontribs</a>.
+A template for creating the <a href="https://github.com/xonsh/xonsh">xonsh</a> extensions called <a href="https://xon.sh/tutorial_xontrib.html">xontribs</a>.
 </p>
 
 <p align="center">
@@ -13,7 +13,10 @@ If you like the template click ⭐ on the repo.
 This template includes good pack of prebuilt files:
 
 * `README` with the info and xontrib promotion instructions
-* [`PEP 621`](https://peps.python.org/pep-0621/) or `poetry` based `pyproject.toml` file to make and install PyPi package easily
+* `pyproject.toml` file to make and install PyPi package easily — pick a build backend when prompted by `copier`:
+  * `setuptools` — classic [`PEP 621`](https://peps.python.org/pep-0621/) layout
+  * `poetry` — [Poetry](https://python-poetry.org/) project layout
+  * `uv` — [uv](https://docs.astral.sh/uv/)-managed project with `hatchling` backend and PEP 735 dependency groups
 * `.gitattributes` file to enable Github syntax highlighting for `*.xsh` files
 * `.gitignore` file with standard list of directories to ignore
 * `.github/workflow/push-test.yml` to automatically test the code using Github Actions

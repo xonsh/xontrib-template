@@ -8,7 +8,7 @@ import subprocess as sp
 
 
 @pytest.mark.parametrize("autoloading", [False, True])
-@pytest.mark.parametrize("builder", ["setuptools", "poetry"])
+@pytest.mark.parametrize("builder", ["setuptools", "poetry", "uv"])
 def test_it_generates(bake_cookie, builder, autoloading):
     out = bake_cookie(package_manager=builder, enable_autoloading=autoloading)
     expected = get_expected_files(builder, autoloading)

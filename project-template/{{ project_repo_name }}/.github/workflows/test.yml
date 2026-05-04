@@ -26,19 +26,30 @@ jobs:
 {%- if package_manager == 'poetry' %}
     - name: Install poetry
       run: pipx install poetry
+{% elif package_manager == 'uv' %}
+    - name: Install uv
+      uses: astral-sh/setup-uv@v6
+      with:
+        enable-cache: true
 {% endif -%}
 {% raw %}
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v6
       with:
         python-version: ${{ matrix.python-version }} {% endraw %}
-        cache: {% if package_manager == 'poetry' %}poetry{% else %}pip{% endif %}
+{%- if package_manager == 'poetry' %}
+        cache: poetry
         cache-dependency-path: pyproject.toml
+{%- elif package_manager == 'uv' %}
+{%- else %}
+        cache: pip
+        cache-dependency-path: pyproject.toml
+{%- endif %}
 
     - uses: pre-commit/action@v3.0.0
     - name: Install dependencies
-      run: {% if package_manager == 'poetry' %}poetry install{% else %}pip install ".[dev]"{% endif %}
+      run: {% if package_manager == 'poetry' %}poetry install{% elif package_manager == 'uv' %}uv sync{% else %}pip install ".[dev]"{% endif %}
     - name: Run tests
       run: |
-        xonsh -c "xontrib load {{ project_package_name}}"
-        {% if package_manager == 'poetry' %}poetry run pytest{% else %}pytest{% endif %}
+        {% if package_manager == 'uv' %}uv run {% endif %}xonsh -c "xontrib load {{ project_package_name}}"
+        {% if package_manager == 'poetry' %}poetry run pytest{% elif package_manager == 'uv' %}uv run pytest{% else %}pytest{% endif %}
