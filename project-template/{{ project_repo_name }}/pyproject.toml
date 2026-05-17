@@ -38,7 +38,7 @@ classifiers = [
     "Topic :: Terminals",
 ]
 requires-python = ">=3.11"
-dependencies = ["xonsh>=0.12.5"]
+dependencies = ["xonsh>=0.23.0"]
 authors = [
     { name = "{{full_name}}", email = "{{email}}" },
 ]
